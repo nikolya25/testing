@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "781429210866",
+    "firebase_url": "https://antyapp-41b39.firebaseio.com",
+    "project_id": "antyapp-41b39",
+    "storage_bucket": "antyapp-41b39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781429210866:android:f9c79c82f78ff673",
+        "android_client_info": {
+          "package_name": "com.antyapp.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781429210866-f4ocjfe0o9vvm485c3r2vgrgbmrmvmi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7W4OYbVULn4Rw0Q3GpY3anBp66HyfuB4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

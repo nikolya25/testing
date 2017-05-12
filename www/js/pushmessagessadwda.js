@@ -1,12 +1,12 @@
-var userName = "Nick",  
+App42.initialize("cbd62cb6d46c4cffc5730955a9f9f1319a79afbcddbc12daf71ef808d40fbbdd","a1ce760466ea6cd6e54238a0938b4a9b712ba40379e147957e3707039a0d90b7");
+
+var userName = "Nick",
 	deviceToken = "Device Token",
 	channel = "News Channel",  
 	description = "Channel all about the news", 
 	message  = "Message which you have to send",  
 	result;    
-
-App42.initialize("cbd62cb6d46c4cffc5730955a9f9f1319a79afbcddbc12daf71ef808d40fbbdd","a1ce760466ea6cd6e54238a0938b4a9b712ba40379e147957e3707039a0d90b7");
-
+	
 var pushNotificationService  = new App42Push();  
 
 pushNotificationService.storeDeviceToken(userName, deviceToken,DeviceType.ANDROID,{    

@@ -28,6 +28,21 @@ function onDeviceReady() {
 	});
 
 	map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+	
+	var push = PushNotification.init({ "android": {"senderID": "806082497848"}});
+	
+	push.on('registration', function(data) {
+		console.log(data.registrationId);
+		document.getElementById("test22").innerHTML = data.registrationId;
+		});
+
+	push.on('notification', function(data) {
+		alert(data.title+" Message: " +data.message);
+	});
+
+	push.on('error', function(e) {
+		alert(e);
+	});
 }
 
 function onMapReady() {
