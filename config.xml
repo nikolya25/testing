@@ -17,6 +17,6 @@
 	<plugin name="cordova-plugin-contacts" spec="~2.3.0" />
 	<plugin name="cordova-sms-plugin" spec="~0.1.11" />
 	<plugin name="cordova-plugin-media" spec="~3.0.1" />
-	<plugin name="cordova-plugin-push" spec="~1.10.3" />
+	<plugin name="phonegap-plugin-push" spec="~1.10.3" />
 
 </widget>
