@@ -3,7 +3,37 @@ function init() {
 }
 
 var map;
-var data = [
+var data = []; 
+var myPosition;
+function onDeviceReady() {
+	var div = document.getElementById("map");
+	map = plugin.google.maps.Map.getMap(div, {
+		'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+		'controls': {
+			'compass': true,
+			'myLocationButton': true,
+			'indoorPicker': true,
+			'zoom': true
+		},
+		'gestures': {
+			'scroll': true,
+			'tilt': true,
+			'rotate': true,
+			'zoom': true
+		},
+		camera: {
+			target: {
+				lat: 50.0593677, lng: 19.9375843
+			},
+			zoom: 10
+		}
+	});
+	
+	setupPush();
+}
+
+function stationsOnMap() {
+	data = [
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
@@ -45,35 +75,6 @@ var data = [
 			'snippet': "Stan jakości powietrza: " + document.getElementById('station8Stan').innerHTML
 		}
 	];
-var myPosition;
-function onDeviceReady() {
-	var div = document.getElementById("map");
-	map = plugin.google.maps.Map.getMap(div, {
-		'mapType': plugin.google.maps.MapTypeId.ROADMAP,
-		'controls': {
-			'compass': true,
-			'myLocationButton': true,
-			'indoorPicker': true,
-			'zoom': true
-		},
-		'gestures': {
-			'scroll': true,
-			'tilt': true,
-			'rotate': true,
-			'zoom': true
-		},
-		camera: {
-			target: {
-				lat: 50.0593677, lng: 19.9375843
-			},
-			zoom: 10
-		}
-	});
-	
-	setupPush();
-}
-
-function stationsOnMap() {
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i]);
@@ -101,7 +102,7 @@ function onLocBtnClick() {
 			'title': msg,
 		}, function(marker) {
 			marker.showInfoWindow();
-			closestStation(location.latLng);
+			//closestStation(location.latLng);
 			map.animateCamera({
 				target: location.latLng,
 				zoom: 16
@@ -126,11 +127,11 @@ function closestStation(myPosition) {
 	document.getElementById('test2').innerHTML = stla[2].position.lng;
 	document.getElementById('test3').innerHTML = myPosition.lat;
 	
-	for (var i = 0; i < data.length; i++) {
-		stla[i] = Math.sqrt(Math.pow(myPosition.lat - data[i].position.lat, 2) + Math.pow(myPosition.lng - data[i].position.lng, 2))
+	/*for (var i = 0; i < data.length; i++) {
+		stla[i] = Math.sqrt(Math.pow(myPosition.lat - data[i].position.lat, 2) + Math.pow(myPosition.lng - data[i].position.lng, 2));
 		document.getElementById('test4').innerHTML = stla[i].position.lat;
 		
-	}
+	}*/
 }
 
 function setupPush() {
