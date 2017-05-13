@@ -76,12 +76,11 @@ function stationsOnMap() {
 	];
 
 	function addMarkers(data, callback) {
-		var stStData= [];
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
 				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-					stStData[i] = document.getElementById('station1Stan');
-					alert("Stan powietrza: " + stStData[i].value);
+					var x = document.getElementById('station1Stan').value;
+					alert("Stan powietrza: " + x);
 				});
 			});
 		}
