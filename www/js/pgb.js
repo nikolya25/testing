@@ -77,9 +77,10 @@ function stationsOnMap() {
 
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			map.addMarker(data[i], function(marker) {
-				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-					alert("Stan powietrza: " + document.getElementById('station' + i+1 +'Stan').innerHTML);
+			var stStan = "Stan powietrza: " + document.getElementById('station' + i+1 + 'Stan').innerHTML;
+			map.addMarker(data[i], function(marker, stStan) {
+				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function(stStan) {
+					alert(stStan);
 				});
 			});
 		}
@@ -121,31 +122,6 @@ function onLocBtnClick() {
 
 	map.clear();
 	map.getMyLocation(onSuccess, onError);
-}
-
-function onInfoClick() {
-	switch (data[i]) {
-    case 0:
-        day = "Sunday";
-        break;
-    case 1:
-        day = "Monday";
-        break;
-    case 2:
-        day = "Tuesday";
-        break;
-    case 3:
-        day = "Wednesday";
-        break;
-    case 4:
-        day = "Thursday";
-        break;
-    case 5:
-        day = "Friday";
-        break;
-    case 6:
-        day = "Saturday";
-}
 }
 
 function setupPush() {

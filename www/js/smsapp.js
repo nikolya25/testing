@@ -1,7 +1,12 @@
 var smsapp = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
-        var message = document.getElementById('messageTxt').value;
+        var message;
+		if (document.getElementById('messageTxt').value === "") {
+			message = "Witam, stan powietrza w mojej dzielnicy jest ";
+		} else {
+			message = document.getElementById('messageTxt').value;
+		}
         console.log("number=" + number + ", message= " + message);
 
         //CONFIGURATION
