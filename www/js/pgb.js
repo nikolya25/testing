@@ -32,7 +32,7 @@ function onDeviceReady() {
 }
 
 function onMapReady() {
-	var stButton = document.getElementById("stations");
+	var stButton = document.getElementById("stationsOnMap");
 	stButton.addEventListener("click", onBtnClicked);
 }
 

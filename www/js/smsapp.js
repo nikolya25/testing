@@ -15,8 +15,6 @@ var smsapp = {
 
         var success = function () { alert('Message sent successfully'); };
         var error = function (e) { alert('Message Failed:' + e); };
-		document.getElementById('map').style.display = "none";
-		document.getElementById('mapshowbutton').style.display = "block";
         sms.send(number, message, options, success, error);
     }
 }
