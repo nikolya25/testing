@@ -100,15 +100,18 @@ function myPositionAndClosestStation() {
 					'Heading: '           + position.coords.heading           + '\n' +
 					'Speed: '             + position.coords.speed             + '\n' +
 					'Timestamp: '         + position.timestamp                + '\n');
+		
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
-		document.getElementById('test3').innerHTML = position.coords.latitude;
-		document.getElementById('test4').innerHTML = myLat;
-		document.getElementById('test1').innerHTML = data[2].position.lng;
+
 		for (var i = 0; i < data.length; i++) {
-			stla[i] = Math.sqrt(Math.pow(myLat - data[i].position.lat, 2) + Math.pow(myLng - data[i].position.lng, 2));
-			document.getElementById('test2').innerHTML = stla[i];		
+			stla[i] = data[i]);
 		}
+		
+		stla.sort(function(a, b){
+			return Math.sqrt(Math.pow(myLat - a.position.lat, 2) + Math.pow(myLng - a.position.lng, 2)) - Math.sqrt(Math.pow(myLat - b.position.lat, 2) + Math.pow(myLng - b.position.lng, 2))
+		});
+		document.getElementById('test1').innerHTML = "Najbliższa stacja: " + stla[0].title;
 	}
 
     // onError Callback receives a PositionError object
