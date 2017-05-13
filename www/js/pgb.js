@@ -35,7 +35,7 @@ function stationsOnMap() {
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
 			'title': "Kraków, Aleja Krasińskiego",
-			'snippet': "Kraków, Aleja Krasińskiego" 
+			'snippet': document.getElementById('station1Stan').value
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
