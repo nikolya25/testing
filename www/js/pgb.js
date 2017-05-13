@@ -91,38 +91,25 @@ function stationsOnMap() {
 }
 
 function onLocBtnClick() {
-	function onSuccess(location) {
-		var msg = ["Current location:\n",
-		"latitude:" + location.latLng.lat,
-		"longitude:" + location.latLng.lng,
-		"speed:" + location.speed,
-		"time:" + location.time,
-		"bearing:" + location.bearing].join("\n");
-		
-		map.addMarker({
-			'position': location.latLng,
-			'title': msg,
-		}, function(marker) {
-			marker.showInfoWindow();
-			myPosition = location.latLng;
-			myLat = location.latLng.lat;
-			myLng = location.latLng.lng;
-			map.animateCamera({
-				target: location.latLng,
-				zoom: 16
-			}, function() {
-				marker.showInfoWindow();
-			});
-		});
-	};
-	
-	var onError = function(msg) {
-		alert(JSON.stringify(msg));
-	};
+	 var onSuccess = function(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n');
+    };
 
-	map.clear();
-	map.getMyLocation(onSuccess, onError);
-	
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 function closestStation() {
