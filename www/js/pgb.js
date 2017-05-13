@@ -4,9 +4,7 @@ function init() {
 
 var map;
 var data = []; 
-var myPosition;
-var myLat;
-var myLng;
+
 function onDeviceReady() {
 	var div = document.getElementById("map");
 	map = plugin.google.maps.Map.getMap(div, {
@@ -90,6 +88,9 @@ function stationsOnMap() {
 
 function myPositionAndClosestStation() {
 	var stla = [];
+	var myLat;
+	var myLng;
+	
 	var onSuccess = function(position) {
 		alert('Latitude: '          + position.coords.latitude          + '\n' +
 					'Longitude: '         + position.coords.longitude         + '\n' +
@@ -101,7 +102,7 @@ function myPositionAndClosestStation() {
 					'Timestamp: '         + position.timestamp                + '\n');
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
-	};
+	}
 
     // onError Callback receives a PositionError object
     //
