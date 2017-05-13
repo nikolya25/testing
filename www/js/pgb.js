@@ -105,7 +105,7 @@ function myPositionAndClosestStation() {
 		myLng = position.coords.longitude;
 
 		for (var i = 0; i < data.length; i++) {
-			stla[i] = data[i]);
+			stla[i] = data[i];
 		}
 		
 		stla.sort(function(a, b){
