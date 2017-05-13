@@ -31,11 +31,15 @@ function onDeviceReady() {
 }
 
 function stationsOnMap() {
+	var staStan = [];
+	for (var i = 0; i < 8; i++) {
+		staStan[i] = document.getElementById('station' + i + 1 + 'Stan').value;
+	}
 	var data = [
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
 			'title': "Kraków, Aleja Krasińskiego",
-			'snippet': document.getElementById('station1Stan').value
+			'snippet': "Stan: " + staStan[0];
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
