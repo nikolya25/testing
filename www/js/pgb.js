@@ -3,6 +3,49 @@ function init() {
 }
 
 var map;
+var data = [
+		{
+			'position': {lat: 50.081197, lng: 19.895358},
+			'title': "Kraków, ul. Złoty Róg",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station1Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.057447, lng: 19.946008},
+			'title': "Kraków, ul. Dietla",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station2Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.057678, lng: 19.926189},
+			'title': "Kraków, Aleja Krasińskiego",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station3Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.069308, lng: 20.053492},
+			'title': "Kraków, ul. Bulwarowa",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station4Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.100569, lng: 20.122561},
+			'title': "Kraków, os. Wadów",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station5Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.099361, lng: 20.018317},
+			'title': "Kraków, os. Piastów",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station6Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.010575, lng: 19.949189},
+			'title': "Kraków, ul. Bujaka",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station7Stan').innerHTML
+		},
+		{
+			'position': {lat: 50.0192 , lng: 20.016803},
+			'title': "Kraków, ul. Telimeny",
+			'snippet': "Stan jakości powietrza: " + document.getElementById('station8Stan').innerHTML
+		}
+	];
+var myPosition;
 function onDeviceReady() {
 	var div = document.getElementById("map");
 	map = plugin.google.maps.Map.getMap(div, {
@@ -31,50 +74,6 @@ function onDeviceReady() {
 }
 
 function stationsOnMap() {
-	var data = [
-		{
-			'position': {lat: 50.081197, lng: 19.895358},
-			'title': "Kraków, ul. Złoty Róg",
-			'snippet': "Stan jakości powietrza: " + document.getElementById('station1Stan').innerHTML
-		},
-		{
-			'position': {lat: 50.057447, lng: 19.946008},
-			'title': "Kraków, ul. Dietla",
-			'snippet': document.getElementById('station2Stan').innerHTML
-		},
-		{
-			'position': {lat: 50.057678, lng: 19.926189},
-			'title': "Kraków, Aleja Krasińskiego",
-			'snippet': "Kraków, Aleja Krasińskiego" 
-		},
-		{
-			'position': {lat: 50.069308, lng: 20.053492},
-			'title': "Kraków, ul. Bulwarowa",
-			'snippet': "Kraków, ul. Bulwarowa"
-		},
-		{
-			'position': {lat: 50.100569, lng: 20.122561},
-			'title': "Kraków, os. Wadów",
-			'snippet': "Kraków, os. Wadów"
-		},
-		{
-			'position': {lat: 50.099361, lng: 20.018317},
-			'title': "Kraków, os. Piastów",
-			'snippet': "Kraków, os. Piastów"
-		},
-		{
-			'position': {lat: 50.010575, lng: 19.949189},
-			'title': "Kraków, ul. Bujaka",
-			'snippet': "Kraków, ul. Bujaka"
-		},
-		{
-			'position': {lat: 50.0192 , lng: 20.016803},
-			'title': "Kraków, ul. Telimeny",
-			'snippet': "Kraków, ul. Telimeny"
-		},
-		
-	];
-
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i]);
@@ -102,6 +101,7 @@ function onLocBtnClick() {
 			'title': msg,
 		}, function(marker) {
 			marker.showInfoWindow();
+			closestStation(location.latLng);
 			map.animateCamera({
 				target: location.latLng,
 				zoom: 16
@@ -117,6 +117,20 @@ function onLocBtnClick() {
 
 	map.clear();
 	map.getMyLocation(onSuccess, onError);
+	
+}
+
+function closestStation(myPosition) {
+	var stla = [];
+	document.getElementById('test1').innerHTML = data[2].position.lng;
+	document.getElementById('test2').innerHTML = stla[2].position.lng;
+	document.getElementById('test3').innerHTML = myPosition.lat;
+	
+	for (var i = 0; i < data.length; i++) {
+		stla[i] = Math.sqrt(Math.pow(myPosition.lat - data[i].position.lat, 2) + Math.pow(myPosition.lng - data[i].position.lng, 2))
+		document.getElementById('test4').innerHTML = stla[i].position.lat;
+		
+	}
 }
 
 function setupPush() {
