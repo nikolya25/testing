@@ -121,12 +121,12 @@ function onLocBtnClick() {
 	
 }
 
-function closestStation(myPosition) {
+function closestStation(myLat, myLng) {
 	var stla = [];
 	document.getElementById('test1').innerHTML = data[2].position.lng;
 	document.getElementById('test2').innerHTML = stla[0].position.lng;
-	document.getElementById('test3').innerHTML = myPosition.lat;
-	document.getElementById('test4').innerHTML = locstion.latLng.lat;
+	document.getElementById('test3').innerHTML = myLat;
+	document.getElementById('test4').innerHTML = location.latLng.lat;
 	/*for (var i = 0; i < data.length; i++) {
 		stla[i] = Math.sqrt(Math.pow(myPosition.lat - data[i].position.lat, 2) + Math.pow(myPosition.lng - data[i].position.lng, 2));
 		document.getElementById('test4').innerHTML = stla[i].position.lat;
