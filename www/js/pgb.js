@@ -79,7 +79,11 @@ function stationsOnMap() {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
 				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-					alert("Stan powietrza: " + stan1.stIndexLevel.indexLevelName);
+					document.getElementById('test1').innerHTML = document.getElementById('station1Stan').value;
+					document.getElementById('test1').innerHTML = document.getElementById('station1Stan');
+					document.getElementById('test1').innerHTML = $('#station1Stan').value;
+					document.getElementById('test1').innerHTML = $('#station1Stan');
+					alert("Stan powietrza: " + document.getElementById('station1Stan').value);
 				});
 			});
 		}
