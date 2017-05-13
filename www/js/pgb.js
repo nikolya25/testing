@@ -107,7 +107,7 @@ function myPositionAndClosestStation() {
 		document.getElementById('test1').innerHTML = data[2].position.lng;
 		for (var i = 0; i < data.length; i++) {
 			stla[i] = Math.sqrt(Math.pow(myLat - data[i].position.lat, 2) + Math.pow(myLng - data[i].position.lng, 2));
-			document.getElementById('test2').innerHTML = stla[i].position.lat;		
+			document.getElementById('test2').innerHTML = stla[i];		
 		}
 	}
 
