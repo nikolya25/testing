@@ -88,8 +88,10 @@
 				<h1>AntySMOG</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<input type="button" id="stationsOnMap" class="ui-btn ui-btn-inline" value="Stację pomiarowe"/>
-				<iframe id="map" style="width:100%;height:300px;" alt="Google map"></iframe>
+				<div>
+					<iframe id="map" style="width:100%;height:300px;" alt="Google map"></iframe>
+					<input type="button" id="stationsOnMap" value="Stację pomiarowe"/>
+				</div>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>AntySMOG Ltd.</h1>
@@ -105,7 +107,7 @@
 			<div data-role="main" class="ui-content">
 				<form id="sending">
 					<input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
-					<textarea id="messageTxt" placeholder="Enter message"></textarea>
+					<textarea id="messageTxt" value="Hi there!!"></textarea>
 					<input type="button" onclick="smsapp.sendSms()" value="Send SMS" />
 				</form>
 			</div>
