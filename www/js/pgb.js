@@ -86,11 +86,9 @@ function stationsOnMap() {
 	addMarkers(data, function(markers) {
 		markers[markers.length - 1].showInfoWindow();
 	});
-	
-	map.addEventListener(plugin.google.maps.event.MY_LOCATION_BUTTON_CLICK, onLocBtnClick);
 }
 
-function onLocBtnClick() {
+function getMyPosition() {
 	 var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
