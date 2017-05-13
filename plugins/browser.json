@@ -1,0 +1,46 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-googlemaps": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "antySMOGapp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "antySMOGapp"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "antySMOGapp"
+        }
+    }
+}
