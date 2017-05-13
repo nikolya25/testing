@@ -84,7 +84,7 @@ function stationsOnMap() {
 					document.getElementById('test2').innerHTML = x;
 					document.getElementById('test3').innerHTML = typeof x;
 					document.getElementById('test4').innerHTML = x.toString();
-					alert("Stan powietrza: " + document.getElementById('station1Stan').value);
+					alert("Stan powietrza: " + document.getElementById('station1Stan').innerHTML);
 				});
 			});
 		}
