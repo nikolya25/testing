@@ -77,10 +77,35 @@ function stationsOnMap() {
 
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			var stStan = "Stan powietrza: " + document.getElementById('station' + i+1 + 'Stan').innerHTML;
-			map.addMarker(data[i], function(marker, stStan) {
-				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function(stStan) {
-					alert(stStan);
+			map.addMarker(data[i], function(marker) {
+				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function(marker) {
+					var j;
+					switch (marker.title) {
+    case "Kraków, ul. Złoty Róg":
+        j = 1;
+        break;
+    case "Kraków, ul. Dietla":
+        j = 2;
+        break;
+    case "Kraków, Aleja Krasińskiego":
+        j = 3;
+        break;
+    case "Kraków, ul. Bulwarowa":
+        j = 4;
+        break;
+    case "Kraków, os. Wadów":
+        j = 5;
+        break;
+    case "Kraków, os. Piastów":
+        j = 6;
+        break;
+    case "Kraków, ul. Bujaka":
+        j = 7;
+		break;
+    case "Kraków, ul. Telimeny":
+        j = 8;
+}
+					alert('Stan powietrza: ' + document.getElementById('station' + j + 'Stan').innerHTML);
 				});
 			});
 		}
