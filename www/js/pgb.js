@@ -91,7 +91,7 @@ function stationsOnMap() {
 function myPositionAndClosestStation() {
 	var stla = [];
 	var onSuccess = function(position) {
-		console.log('Latitude: '          + position.coords.latitude          + '\n' +
+		alert('Latitude: '          + position.coords.latitude          + '\n' +
 					'Longitude: '         + position.coords.longitude         + '\n' +
 					'Altitude: '          + position.coords.altitude          + '\n' +
 					'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -99,7 +99,9 @@ function myPositionAndClosestStation() {
 					'Heading: '           + position.coords.heading           + '\n' +
 					'Speed: '             + position.coords.speed             + '\n' +
 					'Timestamp: '         + position.timestamp                + '\n');
-    };
+		myLat = position.coords.latitude;
+		myLng = position.coords.longitude;
+	};
 
     // onError Callback receives a PositionError object
     //
@@ -112,7 +114,7 @@ function myPositionAndClosestStation() {
 	document.getElementById('test1').innerHTML = data[2].position.lng;
 	document.getElementById('test2').innerHTML = stla[0].position.lng;
 	document.getElementById('test3').innerHTML = position.coords.latitude;
-	document.getElementById('test4').innerHTML = position.coords.longitude;
+	document.getElementById('test4').innerHTML = myLat;
 	/*for (var i = 0; i < data.length; i++) {
 		stla[i] = Math.sqrt(Math.pow(myPosition.lat - data[i].position.lat, 2) + Math.pow(myPosition.lng - data[i].position.lng, 2));
 		document.getElementById('test4').innerHTML = stla[i].position.lat;
