@@ -35,42 +35,42 @@ function stationsOnMap() {
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
-			'snippet': "Kraków, ul. Złoty Róg"
+			//'snippet': "Kraków, ul. Złoty Róg"
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
 			'title': "Kraków, ul. Dietla",
-			'snippet': "Kraków, ul. Dietla"
+			//'snippet': "Kraków, ul. Dietla"
 		},
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
 			'title': "Kraków, Aleja Krasińskiego",
-			'snippet': "Kraków, Aleja Krasińskiego" 
+			//'snippet': "Kraków, Aleja Krasińskiego" 
 		},
 		{
 			'position': {lat: 50.069308, lng: 20.053492},
 			'title': "Kraków, ul. Bulwarowa",
-			'snippet': "Kraków, ul. Bulwarowa"
+			//'snippet': "Kraków, ul. Bulwarowa"
 		},
 		{
 			'position': {lat: 50.100569, lng: 20.122561},
 			'title': "Kraków, os. Wadów",
-			'snippet': "Kraków, os. Wadów"
+			//'snippet': "Kraków, os. Wadów"
 		},
 		{
 			'position': {lat: 50.099361, lng: 20.018317},
 			'title': "Kraków, os. Piastów",
-			'snippet': "Kraków, os. Piastów"
+			//'snippet': "Kraków, os. Piastów"
 		},
 		{
 			'position': {lat: 50.010575, lng: 19.949189},
 			'title': "Kraków, ul. Bujaka",
-			'snippet': "Kraków, ul. Bujaka"
+			//'snippet': "Kraków, ul. Bujaka"
 		},
 		{
 			'position': {lat: 50.0192 , lng: 20.016803},
 			'title': "Kraków, ul. Telimeny",
-			'snippet': "Kraków, ul. Telimeny"
+			//'snippet': "Kraków, ul. Telimeny"
 		},
 		
 	];
@@ -78,15 +78,8 @@ function stationsOnMap() {
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
-				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-					for (marker.title == "Kraków, ul. Złoty Róg") {
-						document.getElementById('test1').innerHTML = document.getElementById('station1Stan').innerHTML;
-						alert('Stan powietrza: ' + document.getElementById('station1Stan').innerHTML);
-					} else {
-						document.getElementById('test4').innerHTML = document.getElementById('station2Stan').innerHTML;
-						alert('Stan powietrza: ' + document.getElementById('station2Stan').innerHTML);
-					}
-				});
+				marker.setSnippet("Stan jakości powietrza: " + document.getElementById('station' + i+1 + 'Stan'));
+				document.getElementById('test' + i+1).innerHTML =  document.getElementById('station' + i+1 + 'Stan');
 			});
 		}
 	}
