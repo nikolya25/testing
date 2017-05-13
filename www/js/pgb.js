@@ -78,7 +78,7 @@ function stationsOnMap() {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
 				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-					alert("Stan powietrza: " + document.getElementById('station1Stan').value);
+					alert("Stan powietrza: " + document.getElementById('station1Stan'));
 				});
 			});
 		}
