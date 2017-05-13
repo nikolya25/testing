@@ -31,15 +31,11 @@ function onDeviceReady() {
 }
 
 function stationsOnMap() {
-	var staStan = [];
-	for (var i = 0; i < 8; i++) {
-		staStan[i] = document.getElementById('station' + i + 1 + 'Stan').value;
-	}
 	var data = [
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
 			'title': "Kraków, Aleja Krasińskiego",
-			'snippet': "Stan: " + staStan[0];
+			'snippet': "Kraków, Aleja Krasińskiego" 
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
@@ -103,23 +99,45 @@ function onLocBtnClick() {
 		map.addMarker({
 			'position': location.latLng,
 			'title': msg,
-		}, function(marker) {
-			marker.showInfoWindow();
-			map.animateCamera({
-				target: location.latLng,
-				zoom: 16
-			}, function() {
+			'markerClick': function(marker) {
 				marker.showInfoWindow();
-			});
+			}, 'infoClick': function(marker) {
+				alert("InfoWindow is clicked");
+			}
 		});
 	};
-
+	
 	var onError = function(msg) {
 		alert(JSON.stringify(msg));
 	};
 
 	map.clear();
 	map.getMyLocation(onSuccess, onError);
+}
+
+function onInfoClick() {
+	switch (data[i]) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+}
 }
 
 function setupPush() {
