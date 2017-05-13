@@ -28,15 +28,9 @@ function onDeviceReady() {
 	});
 	
 	setupPush();
-	map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
 }
 
-function onMapReady() {
-	var stButton = document.getElementById("stationsOnMap");
-	stButton.addEventListener("click", onBtnClicked);
-}
-
-function onBtnClicked() {
+function stationsOnMap() {
 	var data = [
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
