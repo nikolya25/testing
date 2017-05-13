@@ -3,7 +3,6 @@ function init() {
 }
 
 var map;
-var x = document.getElementById('station1Stan');
 function onDeviceReady() {
 	var div = document.getElementById("map");
 	map = plugin.google.maps.Map.getMap(div, {
@@ -80,7 +79,7 @@ function stationsOnMap() {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
 				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-
+					var x = $('#station1Stan').html();
 					document.getElementById('test1').innerHTML = x.value;
 					document.getElementById('test2').innerHTML = x;
 					document.getElementById('test3').innerHTML = typeof x;
