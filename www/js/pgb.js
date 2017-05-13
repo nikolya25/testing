@@ -78,8 +78,8 @@ function stationsOnMap() {
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
-				marker.setSnippet("Stan jakości powietrza: " + document.getElementById('station' + i+1 + 'Stan'));
-				document.getElementById('test' + i+1).innerHTML =  document.getElementById('station' + i+1 + 'Stan');
+				marker.setSnippet("Stan jakości powietrza: " + document.getElementById('station' + i+1 + 'Stan').innerHTML);
+				document.getElementById('test' + i+1).innerHTML =  document.getElementById('station' + i+1 + 'Stan').innerHTML;
 			});
 		}
 	}
