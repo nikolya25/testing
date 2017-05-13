@@ -78,38 +78,14 @@ function stationsOnMap() {
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i], function(marker) {
-				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function(marker) {
-					var j;
-					switch (marker.title) {
-    case "Kraków, ul. Złoty Róg":
-        j = 1;
-        break;
-    case "Kraków, ul. Dietla":
-        j = 2;
-        break;
-    case "Kraków, Aleja Krasińskiego":
-        j = 3;
-        break;
-    case "Kraków, ul. Bulwarowa":
-        j = 4;
-        break;
-    case "Kraków, os. Wadów":
-        j = 5;
-        break;
-    case "Kraków, os. Piastów":
-        j = 6;
-        break;
-    case "Kraków, ul. Bujaka":
-        j = 7;
-		break;
-    case "Kraków, ul. Telimeny":
-        j = 8;
-}
-					document.getElementById('test1').innerHTML = document.getElementById('station' + j + 'Stan').innerHTML;
-					document.getElementById('test2').innerHTML = 'station' + j + 'Stan';
-					document.getElementById('test3').innerHTML = i;
-					document.getElementById('test4').innerHTML = document.getElementById('station' + i + 'Stan').innerHTML;
-					alert('Stan powietrza: ' + document.getElementById('station' + j + 'Stan').innerHTML);
+				marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
+					for (marker.title == "Kraków, ul. Złoty Róg") {
+						document.getElementById('test1').innerHTML = document.getElementById('station1Stan').innerHTML;
+						alert('Stan powietrza: ' + document.getElementById('station1Stan').innerHTML);
+					} else {
+						document.getElementById('test4').innerHTML = document.getElementById('station2Stan').innerHTML;
+						alert('Stan powietrza: ' + document.getElementById('station2Stan').innerHTML);
+					}
 				});
 			});
 		}
