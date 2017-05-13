@@ -106,9 +106,9 @@ function stationsOnMap() {
         j = 8;
 }
 					document.getElementById('test1').innerHTML = document.getElementById('station' + j + 'Stan').innerHTML;
-					document.getElementById('test1').innerHTML = 'station' + j + 'Stan';
-					document.getElementById('test1').innerHTML = i;
-					document.getElementById('test1').innerHTML = document.getElementById('station' + i + 'Stan').innerHTML;
+					document.getElementById('test2').innerHTML = 'station' + j + 'Stan';
+					document.getElementById('test3').innerHTML = i;
+					document.getElementById('test4').innerHTML = document.getElementById('station' + i + 'Stan').innerHTML;
 					alert('Stan powietrza: ' + document.getElementById('station' + j + 'Stan').innerHTML);
 				});
 			});
