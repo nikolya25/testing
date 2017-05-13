@@ -76,7 +76,11 @@ function stationsOnMap() {
 
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			map.addMarker(data[i])
+			map.addMarker(data[i], function(marker) {
+				marker.addEventListener(plugin.google.maps.event.MARKER_CLICK, function() {
+					alert("Marker is clicked");
+				});
+			});
 		}
 	}
 		
@@ -99,11 +103,14 @@ function onLocBtnClick() {
 		map.addMarker({
 			'position': location.latLng,
 			'title': msg,
-			'markerClick': function(marker) {
+		}, function(marker) {
+			marker.showInfoWindow();
+			map.animateCamera({
+				target: location.latLng,
+				zoom: 16
+			}, function() {
 				marker.showInfoWindow();
-			}, 'infoClick': function(marker) {
-				alert("InfoWindow is clicked");
-			}
+			});
 		});
 	};
 	
