@@ -32,6 +32,11 @@ function onDeviceReady() {
 }
 
 function onMapReady() {
+	var stButton = document.getElementById("stationsOnMap");
+	stButton.addEventListener("click", onBtnClicked);
+}
+
+function onBtnClicked() {
 	var data = [
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
