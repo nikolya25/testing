@@ -4,7 +4,6 @@ function init() {
 
 var map;
 function onDeviceReady() {
-	setupPush();
 	var div = document.getElementById("map");
 	map = plugin.google.maps.Map.getMap(div, {
 		'mapType': plugin.google.maps.MapTypeId.ROADMAP,
@@ -27,12 +26,13 @@ function onDeviceReady() {
 			zoom: 10
 		}
 	});
-
+	
+	setupPush();
 	map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
 }
 
 function onMapReady() {
-	var stButton = document.getElementById("stations");
+	var stButton = document.getElementById("stationsOnMap");
 	stButton.addEventListener("click", onBtnClicked);
 }
 
