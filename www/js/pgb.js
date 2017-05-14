@@ -151,7 +151,7 @@ function stationsAndMeOnMap() {
 			'position': {"lat": myLat, "lng": myLng},
 			'title': 'Tu jesteś',
 			'icon': "https://upload.wikimedia.org/wikipedia/commons/4/4e/Google-location-icon-color_icons_green_home.png",
-			'size' {
+			'size': {
 				'width': 21,
 				'heiht': 34
 			}
