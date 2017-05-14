@@ -44,42 +44,61 @@ function stationsAndMeOnMap() {
 		document.getElementById('station7Stan').innerHTML,
 		document.getElementById('station8Stan').innerHTML,
 	]
+	var icons = [];
+	for (i = 0; i < stStany.lenght; i++) {
+		switch (stStany[i]) {
+		case "Bardzo dobry":
+			icons[i] = '#003300';
+			break;
+		case "Dobry":
+			icons[i] = 'green';
+			break;
+		case "Umiarkowany":
+			icons[i] = 'yellow';
+			break;
+		case "Dostateczny":
+			icons[i] = 'orange';
+			break;
+			case "Zły":
+			icons[i] = 'red';
+			break;
+		case "Bardzo zły":
+			icons[i] = 'purple';
+			break;
+		default: 
+			icons[i] = 'blue';
+		}
+	}
 	var data = [
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
 			'snippet': "Stan jakości powietrza: " + stStany[0],
-			'icon': 'red'
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
 			'title': "Kraków, ul. Dietla",
 			'snippet': "Stan jakości powietrza: " + stStany[1],
-			'icon': 'green'
 		},
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
 			'title': "Kraków, Aleja Krasińskiego",
 			'snippet': "Stan jakości powietrza: " + stStany[2],
-			'icon': 'lime'
 		},
 		{
 			'position': {lat: 50.069308, lng: 20.053492},
 			'title': "Kraków, ul. Bulwarowa",
 			'snippet': "Stan jakości powietrza: " + stStany[3],
-			'icon': 'purple'
 		},
 		{
 			'position': {lat: 50.100569, lng: 20.122561},
 			'title': "Kraków, os. Wadów",
 			'snippet': "Stan jakości powietrza: " + stStany[4],
-			'icon': 'yellow'
 		},
 		{
 			'position': {lat: 50.099361, lng: 20.018317},
 			'title': "Kraków, os. Piastów",
 			'snippet': "Stan jakości powietrza: " + stStany[5],
-			'icon': 'orange'
 		},
 		{
 			'position': {lat: 50.010575, lng: 19.949189},
@@ -95,7 +114,7 @@ function stationsAndMeOnMap() {
 	
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			map.addMarker(data[i]);
+			map.addMarker(data[i], 'icon': icons[i]);
 		}
 	}
 		
@@ -122,6 +141,10 @@ function stationsAndMeOnMap() {
 			'position': {"lat": myLat, "lng": myLng},
 			'title': 'Tu jesteś',
 			'icon': "https://upload.wikimedia.org/wikipedia/commons/4/4e/Google-location-icon-color_icons_green_home.png",
+			'size' {
+				'width': 21,
+				'heiht': 34
+			}
 		});
 		
 		for (var i = 0; i < data.length; i++) {
