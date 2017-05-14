@@ -4,7 +4,6 @@ function init() {
 
 var map;
 var data = []; 
-
 function onDeviceReady() {
 	var div = document.getElementById("map");
 	map = plugin.google.maps.Map.getMap(div, {
@@ -28,7 +27,8 @@ function onDeviceReady() {
 			zoom: 10
 		}
 	});
-	
+	stationOnMap();
+	myPositionAndClosestStation();
 	setupPush();
 }
 
@@ -75,6 +75,7 @@ function stationsOnMap() {
 			'snippet': "Stan jakości powietrza: " + document.getElementById('station8Stan').innerHTML
 		}
 	];
+	
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
 			map.addMarker(data[i]);
@@ -92,7 +93,7 @@ function myPositionAndClosestStation() {
 	var myLng;
 	
 	var onSuccess = function(position) {
-		alert('Latitude: '          + position.coords.latitude          + '\n' +
+		/*alert('Latitude: '          + position.coords.latitude          + '\n' +
 					'Longitude: '         + position.coords.longitude         + '\n' +
 					'Altitude: '          + position.coords.altitude          + '\n' +
 					'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -100,10 +101,18 @@ function myPositionAndClosestStation() {
 					'Heading: '           + position.coords.heading           + '\n' +
 					'Speed: '             + position.coords.speed             + '\n' +
 					'Timestamp: '         + position.timestamp                + '\n');
+		*/
 		
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
-
+		
+				
+		map.addMarker({
+			'position': {"lat": myLat, "lng": myLng},
+			'title': 'Tu jesteś',
+			'icon': "http://www.google.com/intl/en_us/mapfiles/ms/icons/blue-dot.png",
+		});
+		
 		for (var i = 0; i < data.length; i++) {
 			stla[i] = data[i];
 		}
