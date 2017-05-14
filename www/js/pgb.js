@@ -3,7 +3,6 @@ function init() {
 }
 
 var map;
-var data = []; 
 function onDeviceReady() {
 	var div = document.getElementById("map");
 	map = plugin.google.maps.Map.getMap(div, {
@@ -31,8 +30,11 @@ function onDeviceReady() {
 	setupPush();
 }
 
-function stationsOnMap() {
-	data = [
+function stationsAndMeOnMap() {
+	var stla = [];
+	var myLat;
+	var myLng;
+	var data = [
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
@@ -84,12 +86,6 @@ function stationsOnMap() {
 	addMarkers(data, function(markers) {
 		markers[markers.length - 1].showInfoWindow();
 	});
-}
-
-function myPositionAndClosestStation() {
-	var stla = [];
-	var myLat;
-	var myLng;
 	
 	var onSuccess = function(position) {
 		/*alert('Latitude: '          + position.coords.latitude          + '\n' +
