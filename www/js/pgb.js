@@ -27,13 +27,26 @@ function onDeviceReady() {
 			zoom: 10
 		}
 	});
+	
+	setupPush();
+}
 
-function stationsOnMap() {
+function stationsOnMap() { 
+	stStany = [
+				document.getElementById('station1Stan').innerHTML, 
+				document.getElementById('station2Stan').innerHTML, 
+				document.getElementById('station3Stan').innerHTML, 
+				document.getElementById('station4Stan').innerHTML, 
+				document.getElementById('station5Stan').innerHTML, 
+				document.getElementById('station6Stan').innerHTML, 
+				document.getElementById('station7Stan').innerHTML, 
+				document.getElementById('station8Stan').innerHTML,
+			];
 	data = [
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
-			'snippet': "Stan jakości powietrza: " + document.getElementById('station1Stan').innerHTML
+			'snippet': "Stan jakości powietrza: " + stStany[0];
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
@@ -74,7 +87,10 @@ function stationsOnMap() {
 	
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			map.addMarker(data[i]);
+			
+			map.addMarker(data[i],
+			
+			);
 		}
 	}
 		
@@ -168,9 +184,4 @@ function setupPush() {
             console.log('error');
         });
     });
-}
-
-	stationOnMap();
-	myPositionAndClosestStation();
-	setupPush();
 }
