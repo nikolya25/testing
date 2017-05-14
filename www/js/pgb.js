@@ -27,10 +27,6 @@ function onDeviceReady() {
 			zoom: 10
 		}
 	});
-	stationOnMap();
-	myPositionAndClosestStation();
-	setupPush();
-}
 
 function stationsOnMap() {
 	data = [
@@ -172,4 +168,9 @@ function setupPush() {
             console.log('error');
         });
     });
+}
+
+	stationOnMap();
+	myPositionAndClosestStation();
+	setupPush();
 }
