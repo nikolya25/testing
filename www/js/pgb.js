@@ -74,47 +74,57 @@ function stationsAndMeOnMap() {
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
 			'snippet': "Stan jakości powietrza: " + stStany[0],
+			'icon': icons[0]
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
 			'title': "Kraków, ul. Dietla",
 			'snippet': "Stan jakości powietrza: " + stStany[1],
+			'icon': icons[1]
 		},
 		{
 			'position': {lat: 50.057678, lng: 19.926189},
 			'title': "Kraków, Aleja Krasińskiego",
 			'snippet': "Stan jakości powietrza: " + stStany[2],
+			'icon': icons[2]
 		},
 		{
 			'position': {lat: 50.069308, lng: 20.053492},
 			'title': "Kraków, ul. Bulwarowa",
 			'snippet': "Stan jakości powietrza: " + stStany[3],
+			'icon': icons[3]
 		},
 		{
 			'position': {lat: 50.100569, lng: 20.122561},
 			'title': "Kraków, os. Wadów",
 			'snippet': "Stan jakości powietrza: " + stStany[4],
+			'icon': icons[4]
 		},
 		{
 			'position': {lat: 50.099361, lng: 20.018317},
 			'title': "Kraków, os. Piastów",
 			'snippet': "Stan jakości powietrza: " + stStany[5],
+			'icon': icons[5]
 		},
 		{
 			'position': {lat: 50.010575, lng: 19.949189},
 			'title': "Kraków, ul. Bujaka",
-			'snippet': "Stan jakości powietrza: " + stStany[6]
+			'snippet': "Stan jakości powietrza: " + stStany[6],
+			'icon': icons[6]
 		},
 		{
 			'position': {lat: 50.0192 , lng: 20.016803},
 			'title': "Kraków, ul. Telimeny",
-			'snippet': "Stan jakości powietrza: " + stStany[7]
+			'snippet': "Stan jakości powietrza: " + stStany[7],
+			'icon': icons[7]
 		}
 	];
 	
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			map.addMarker(data[i], 'icon': icons[i]);
+			
+			map.addMarker(data[i]);
+			
 		}
 	}
 		
