@@ -146,14 +146,6 @@ function stationsAndMeOnMap() {
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
 		
-				
-		map.addMarker({
-			'position': {"lat": myLat, "lng": myLng},
-			'title': 'Tu jesteś',
-			'snippet': 'Stan powietrza: ' + document.getElementById('stanNajbliższej').innerHTML,
-			'icon': "http://maps.google.com/mapfiles/kml/pal3/icon56.png"
-		});
-		
 		for (var i = 0; i < data.length; i++) {
 			stla[i] = data[i];
 		}
@@ -161,7 +153,14 @@ function stationsAndMeOnMap() {
 		stla.sort(function(a, b){
 			return Math.sqrt(Math.pow(myLat - a.position.lat, 2) + Math.pow(myLng - a.position.lng, 2)) - Math.sqrt(Math.pow(myLat - b.position.lat, 2) + Math.pow(myLng - b.position.lng, 2))
 		});
-		document.getElementById('stanNajbliższej').innerHTML = "Najbliższa stacja: " + stla[0].title;
+		document.getElementById('stanNajbliższej').innerHTML = stla[0].snippet;
+		
+		map.addMarker({
+			'position': {"lat": myLat, "lng": myLng},
+			'title': 'Tu jestem',
+			'snippet': stla[0].snippet,
+			'icon': "http://maps.google.com/mapfiles/kml/pal3/icon56.png"
+		});
 	}
 
     // onError Callback receives a PositionError object
