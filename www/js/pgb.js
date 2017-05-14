@@ -46,7 +46,7 @@ function stationsOnMap() {
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
-			'snippet': "Stan jakości powietrza: " + stStany[0];
+			'snippet': "Stan jakości powietrza: " + stStany[0]
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
