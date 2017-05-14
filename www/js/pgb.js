@@ -34,11 +34,21 @@ function stationsAndMeOnMap() {
 	var stla = [];
 	var myLat;
 	var myLng;
+	var stStany = [
+		document.getElementById('station1Stan').innerHTML,
+		document.getElementById('station2Stan').innerHTML,
+		document.getElementById('station3Stan').innerHTML,
+		document.getElementById('station4Stan').innerHTML,
+		document.getElementById('station5Stan').innerHTML,
+		document.getElementById('station6Stan').innerHTML,
+		document.getElementById('station7Stan').innerHTML,
+		document.getElementById('station8Stan').innerHTML,
+	]
 	var data = [
 		{
 			'position': {lat: 50.081197, lng: 19.895358},
 			'title': "Kraków, ul. Złoty Róg",
-			'snippet': "Stan jakości powietrza: " + document.getElementById('station1Stan').innerHTML
+			'snippet': "Stan jakości powietrza: " + stStany[0]
 		},
 		{
 			'position': {lat: 50.057447, lng: 19.946008},
