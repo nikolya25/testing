@@ -2,6 +2,7 @@ var smsapp = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
         var message;
+		// nie widzę sensu w tym sms'ie, ale działa, 
 		if (document.getElementById('messageTxt').value === "") {
 			message = "Nazwa stacji: " + document.getElementById('stationNameH').innerHTML + 
 			"<br /> " + document.getElementById('pzPM10').innerHTML + 
@@ -42,7 +43,6 @@ var smsapp = {
 		} else {
 			message = document.getElementById('messageTxt').value;
 		}
-		document.getElementById('test').innerHTML = message;
 
         //CONFIGURATION
         var options = {

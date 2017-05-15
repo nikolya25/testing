@@ -490,23 +490,21 @@ function station8dane(){
 // funkcja do sprawdzania czy jest darmowe mpk
 
 function mpkFree(){
-	
 	var currentDate = new Date();
 	function leadingZero(i) {
        	return (i < 10)? '0'+i : i;
     }
-	var wczoraj23 =currentDate.getFullYear() + "-"+ leadingZero((currentDate.getMonth()+1)) + "-"  + leadingZero((currentDate.getDate() - 1)) + " " +"11:00:00";
-	var wczoraj23String=wczoraj23.toString();
+	var wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()+1) + "-" + leadingZero(currentDate.getDate() - 1) +" 11:00:00";
+	var wczoraj23String = wczoraj23.toString();
 	var srednia2Sum = 0;
 	var srednia1Sum = 0;
 	//window.localStorage.setItem("srednia1ls", "0");
 	//window.localStorage.setItem("srednia2ls", "0");
-	var idTab=['16786','16377','2750','2792','17309','16784','2770','17243'];
-	for (var z = 0; z < 8; z++) {
+	var idTab=[16786, 16377, 2750, 2792, 17309, 16784, 2770, 17243];
+	/*for (var z = 0; z < 8; z++) {
 		document.getElementById(z).innerHTML = idTab[z];
-	}
-}
-	/*
+	}*/
+
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
 			var suma1 = 0;
@@ -553,11 +551,7 @@ function mpkFree(){
 	else{
 		document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej"+ srednia1Final + " Srednia2:" + srednia2Final;
 	}
-	
-
-
 }
-*/
 
 
 
