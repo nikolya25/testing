@@ -4,43 +4,42 @@ var smsapp = {
         var message;
 		// nie widzę sensu w tym sms'ie (dla tego zostawiłem tylko część), ale działa, 
 		if (document.getElementById('messageTxt').value === "") {
-			message = "Nazwa stacji: " + document.getElementById('stationNameH').innerHTML + 
-			/*"<br /> " + document.getElementById('pzPM10').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationPM10') + 
-			"<br />Data pomiaru: " + document.getElementById('stationPM10Date') +
-			"<br />Norma: " + document.getElementById('stationPM10Norm') +*/
-			"<br />Stan powietrza: " + document.getElementById('stationPM10Stan') /*+
-			"<br /><br /> " + document.getElementById('daNO2').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationNO2') + 
-			"<br />Data pomiaru: " + document.getElementById('stationNO2Date') +
-			"<br />Norma: " + document.getElementById('stationNO2Norm') +
-			"<br />Stan powietrza: " + document.getElementById('stationNO2Stan') +
-			"<br /><br /> " + document.getElementById('twCO').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationCO') + 
-			"<br />Data pomiaru: " + document.getElementById('stationCODate') +
-			"<br />Norma: " + document.getElementById('stationCONorm') +
-			"<br />Stan powietrza: " + document.getElementById('stationCOStan') +
-			"<br /><br /> " + document.getElementById('bC6H6').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationBenzen') + 
-			"<br />Data pomiaru: " + document.getElementById('stationBenzenDate') +
-			"<br />Norma: " + document.getElementById('stationBenzenNorm') +
-			"<br />Stan powietrza: " + document.getElementById('stationBenzenStan') +
-			"<br /><br /> " + document.getElementById('pzPM25').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationPM25') + 
-			"<br />Data pomiaru: " + document.getElementById('stationPM25Date') +
-			"<br />Norma: " + document.getElementById('stationPM25Norm') +
-			"<br />Stan powietrza: " + document.getElementById('stationPM25Stan') +
-			"<br /><br /> " + document.getElementById('dsSO2').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationSO2') + 
-			"<br />Data pomiaru: " + document.getElementById('stationSO2Date') +
-			"<br />Norma: " + document.getElementById('stationSO2Norm') +
-			"<br />Stan powietrza: " + document.getElementById('stationSO2Stan') +
-			"<br /><br /> " + document.getElementById('oO3').innerHTML + 
-			":<br />Wartość pomiaru: " + document.getElementById('stationO3') + 
-			"<br />Data pomiaru: " + document.getElementById('stationO3Date') +
-			"<br />Norma: " + document.getElementById('stationO3Norm') +
-			"<br />Stan powietrza: " + document.getElementById('stationO3Stan') +*/;
-			"<br />Informacja MPK: " + document.getElementById('informacjaMPK');
+			message = /*document.getElementById('pzPM10').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationPM10').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationPM10Date').innerHTML +
+			", Norma: " + document.getElementById('stationPM10Norm').innerHTML +*/
+			",  Stan powietrza: " + document.getElementById('stationPM10Stan').innerHTML +
+			/*", " + document.getElementById('daNO2').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationNO2').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationNO2Date').innerHTML +
+			", Norma: " + document.getElementById('stationNO2Norm').innerHTML +
+			", Stan powietrza: " + document.getElementById('stationNO2Stan').innerHTML +
+			", " + document.getElementById('twCO').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationCO').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationCODate').innerHTML +
+			", Norma: " + document.getElementById('stationCONorm').innerHTML +
+			", Stan powietrza: " + document.getElementById('stationCOStan').innerHTML +
+			", " + document.getElementById('bC6H6').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationBenzen').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationBenzenDate').innerHTML +
+			", Norma: " + document.getElementById('stationBenzenNorm').innerHTML +
+			", Stan powietrza: " + document.getElementById('stationBenzenStan').innerHTML +
+			", " + document.getElementById('pzPM25').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationPM25').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationPM25Date').innerHTML +
+			", Norma: " + document.getElementById('stationPM25Norm').innerHTML +
+			", Stan powietrza: " + document.getElementById('stationPM25Stan').innerHTML +
+			", " + document.getElementById('dsSO2').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationSO2').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationSO2Date').innerHTML +
+			", Norma: " + document.getElementById('stationSO2Norm').innerHTML +
+			", Stan powietrza: " + document.getElementById('stationSO2Stan').innerHTML +
+			", " + document.getElementById('oO3').innerHTML + 
+			": Wartość pomiaru: " + document.getElementById('stationO3').innerHTML + 
+			", Data pomiaru: " + document.getElementById('stationO3Date').innerHTML +
+			", Norma: " + document.getElementById('stationO3Norm').innerHTML +
+			", Stan powietrza: " + document.getElementById('stationO3Stan').innerHTML +*/;
+			", Informacja MPK: " + document.getElementById('informacjaMPK').innerHTML;
 		} else {
 			message = document.getElementById('messageTxt').value;
 		}
