@@ -496,8 +496,8 @@ function mpkFree(){
     }
 	var wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()+1) + "-" + leadingZero(currentDate.getDate() - 1) +" 11:00:00";
 	var wczoraj23String = wczoraj23.toString();
-	var srednia2 = 0;
-	var srednia1 = 0;
+	var srednia2Sum = 0;
+	var srednia1Sum = 0;
 	//window.localStorage.setItem("srednia1ls", "0");
 	//window.localStorage.setItem("srednia2ls", "0");
 	var idTab=[16786, 16377, 2750, 2792, 17309, 16784, 2770, 17243];
@@ -509,7 +509,8 @@ function mpkFree(){
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
 			var suma1 = 0;
 			var suma2 = 0;
-
+			var srednia1 = 0;
+			var srednia2 = 0;
 			for (var x = 0; x < 58; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
 					document.getElementById('data9').innerHTML = dane1.values[x].date;
@@ -529,10 +530,10 @@ function mpkFree(){
 				}	
 			}
 		});
-		document.getElementById('srednia1').innerHTML = srednia1;
-		document.getElementById('srednia2').innerHTML = srednia2;
-		var srednia1Final = srednia1 / 8;
-		var srednia2Final = srednia2 / 8;
+		srednia1Sum = document.getElementById('q2').innerHTML;
+		srednia2Sum = document.getElementById('q4').innerHTML;
+		var srednia1Final = srednia1Sum / 8;
+		var srednia2Final = srednia2Sum / 8;
 		if (srednia1Final >= 150 || srednia2Final >= 150) {
 			document.getElementById('informacjaMPK').innerHTML = "Z powodu wysokiego zanieczyszczenia powietrza jakie miało miejsce w dniu wczorajszym, w dniu dzisiejszym obowiązuje darmowa komunikacja miejska na terenie całego miasta Krakowa za okazaniem dowodu rejestracyjnego.";
 		} else {
