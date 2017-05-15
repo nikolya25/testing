@@ -48,10 +48,10 @@ function stationsAndMeOnMap() {
 	for (i = 0; i < stStany.length; i++) {
 		switch (stStany[i]) {
 		case "Bardzo dobry":
-			icons[i] = 'green';  // green = lime
+			icons[i] = 'blue';  // green = lime
 			break;
 		case "Dobry":
-			icons[i] = 'blue';
+			icons[i] = 'green';
 			break;
 		case "Umiarkowany":
 			icons[i] = 'yellow';
