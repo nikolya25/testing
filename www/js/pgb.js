@@ -64,9 +64,6 @@ function stationsAndMeOnMap() {
 			break;
 		case "Bardzo zły":
 			icons[i] = 'purple';
-			break;
-		default: 
-			icons[i] = 'blue';
 		}
 	}
 	var data = [
@@ -122,27 +119,15 @@ function stationsAndMeOnMap() {
 	
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			
 			map.addMarker(data[i]);
-			
 		}
 	}
 		
 	addMarkers(data, function(markers) {
 		markers[markers.length - 1].showInfoWindow();
 	});
-	
+
 	var onSuccess = function(position) {
-		/*alert('Latitude: '          + position.coords.latitude          + '\n' +
-					'Longitude: '         + position.coords.longitude         + '\n' +
-					'Altitude: '          + position.coords.altitude          + '\n' +
-					'Accuracy: '          + position.coords.accuracy          + '\n' +
-					'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-					'Heading: '           + position.coords.heading           + '\n' +
-					'Speed: '             + position.coords.speed             + '\n' +
-					'Timestamp: '         + position.timestamp                + '\n');
-		*/
-		
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
 		
@@ -153,7 +138,6 @@ function stationsAndMeOnMap() {
 		stla.sort(function(a, b){
 			return Math.sqrt(Math.pow(myLat - a.position.lat, 2) + Math.pow(myLng - a.position.lng, 2)) - Math.sqrt(Math.pow(myLat - b.position.lat, 2) + Math.pow(myLng - b.position.lng, 2))
 		});
-		document.getElementById('stanNajbliższej').innerHTML = stla[0].snippet;
 		
 		map.addMarker({
 			'position': {"lat": myLat, "lng": myLng},

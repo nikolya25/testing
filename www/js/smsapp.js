@@ -3,11 +3,11 @@ var smsapp = {
         var number = document.getElementById('numberTxt').value;
         var message;
 		if (document.getElementById('messageTxt').value === "") {
-			message = "Witam, stan powietrza w mojej dzielnicy jest ";
+			message = document.getElementById('stationNameH').innerHTML + "/n" + document.getElementById('stationPM10').innerHTML;
 		} else {
 			message = document.getElementById('messageTxt').value;
 		}
-        console.log("number=" + number + ", message= " + message);
+		document.getElementById('test').innerHTML = message;
 
         //CONFIGURATION
         var options = {

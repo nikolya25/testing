@@ -5,10 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
 
 		<script type="text/javascript" src="cordova.js"></script>
-		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-		<link rel="stylesheet" href="css/themes/my-first-theme.css" />
-		<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>	
 	</head>
@@ -88,7 +84,6 @@
 			<div data-role="main" class="ui-content">
 				<iframe id="map" style="width:100%;height:300px;" alt="Google map"></iframe>
 				<input type="button" onclick="stationsAndMeOnMap()" value="Stacje i ja"/>
-				<p id="stanNajbliższej" style="display:hidden">Najbliższa stacja</p>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>AntySMOG Ltd.</h1>
@@ -103,8 +98,8 @@
 			</div>
 			<div data-role="main" class="ui-content">
 				<form id="sending">
-					<input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
-					<textarea id="messageTxt" placeholder="Enter message"></textarea>
+					<input id="numberTxt" placeholder="Wprowadź numer" value="" type="tel" />
+					<textarea id="messageTxt" placeholder="Wprowadź powiadomienia sms"></textarea>
 					<input type="button" onclick="smsapp.sendSms()" value="Send SMS" />
 				</form>
 			</div>
@@ -113,18 +108,28 @@
 			</div> 
 		</div>
 
-		<!-- Strona z informacją o drmowym mpk -->
+		<!-- Strona z informacją o darmowym mpk -->
 		
-		<div data-role="page" id="mpk">
+	<div data-role="page" id="mpk">
 			<div data-role="header" data-position="fixed">
 				<h1>AntySMOG</h1>
+				<a href="#" class="ui-btn ui-icon-comment ui-btn-icon-left">Prześlij znajomemu</a>
 			</div>
 			<div data-role="main" class="ui-content">
-				<p id="data1">błąd</p>
-				<p id="data2">błąd</p>
-				<p id="data3">błąd</p>
+				<p id="0">błąd</p>
+				<p id="1">błąd</p>
+				<p id="2">błąd</p>
+				<p id="3">błąd</p>
+				<p id="4">błąd</p>
+				<p id="5">błąd</p>
+				<p id="6">błąd</p>
+				<p id="7">błąd</p>
+				<p id="8">błąd</p>
+				<p id="data9">błąd</p>
 				<p id="srednia1">błąd</p>
 				<p id="srednia2">błąd</p>
+				<div id="informacjaMPK"></div>
+
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>AntySMOG Ltd.</h1>
@@ -139,58 +144,60 @@
 		<div data-role="page" id="stationDane">
 			<div data-role="header" data-position="fixed">
 				<h1 id="stationNameH">AntySMOG</h1>
+				<a href="#" class="ui-btn ui-icon-comment ui-btn-icon-left" onclick="smsapp.sendSms()">Prześlij znajomemu</a>
 			</div>
 			<div data-role="main" class="ui-content">
-				<h2>Pył zawieszony PM10:</h2>
+				<h2 id="pzPM10">Pył zawieszony PM10:</h2>
 				<ul data-role="listview" >
 			      <li><a href="#">Wartość pomiaru: <strong id="stationPM10">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationPM10Date">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationPM10Norm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationPM10Stan">-</strong></a></li>
 			    </ul>
-			    <h2>Dwutlenek azotu NO2:</h2>
+			    <h2 id="daNO2">Dwutlenek azotu NO2:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationNO2">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationNO2Date">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationNO2Norm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationNO2Stan">-</strong></a></li>
 			    </ul>
-			    <h2>Tlenek węgla CO:</h2>
+			    <h2 id="twCO">Tlenek węgla CO:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationCO">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationCODate">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationCONorm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationCOStan">-</strong></a></li>
 			    </ul>
-			    <h2>Benzen C6H6:</h2>
+			    <h2 id="bC6H6">Benzen C6H6:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationBenzen">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationBenzenDate">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationBenzenNorm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationBenzenStan">-</strong></a></li>
 			    </ul>
-			    <h2>pył zawieszony PM2.5:</h2>
+			    <h2 id="pzPM25">pył zawieszony PM2.5:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationPM25">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationPM25Date">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationPM25Norm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationPM25Stan">-</strong></a></li>
 			    </ul>
-			    <h2>Dwutlenek siarki SO2:</h2>
+			    <h2 id="dsSO2">Dwutlenek siarki SO2:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationSO2">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationSO2Date">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationSO2Norm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationSO2Stan">-</strong></a></li>
 			    </ul>
-			    <h2>Ozon O3:</h2>
+			    <h2 id="oO3">Ozon O3:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationO3">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationO3Date">-</strong></a></li>
 			      <li><a href="#">Norma: <strong id="stationO3Norm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationO3Stan">-</strong></a></li>
 			    </ul>
-
+				
+				<p id="test"/>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>AntySMOG Ltd.</h1>
