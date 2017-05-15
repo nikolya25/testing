@@ -496,8 +496,8 @@ function mpkFree(){
     }
 	var wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()+1) + "-" + leadingZero(currentDate.getDate() - 1) +" 11:00:00";
 	var wczoraj23String = wczoraj23.toString();
-	var srednia2Sum = 0;
 	var srednia1Sum = 0;
+	var srednia2Sum = 0;
 	//window.localStorage.setItem("srednia1ls", "0");
 	//window.localStorage.setItem("srednia2ls", "0");
 	var idTab=[16786, 16377, 2750, 2792, 17309, 16784, 2770, 17243];
@@ -511,7 +511,7 @@ function mpkFree(){
 			var suma2 = 0;
 			var srednia1 = 0;
 			var srednia2 = 0;
-			for (var x = 0; x < 58; x++) {
+			for (var x = 0; x < 30; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
 					document.getElementById('data9').innerHTML = dane1.values[x].date;
 					for (var y = 0; y < 12; y++) {
@@ -526,16 +526,14 @@ function mpkFree(){
 					}
 					srednia2 = suma2 / 16;
 					document.getElementById('q4').innerHTML = srednia2;
-					//break;
 				}	
 			}
-		});
 		srednia1Sum = document.getElementById('q2').innerHTML;
 		srednia2Sum = document.getElementById('q4').innerHTML;
 		document.getElementById('q5').innerHTML = srednia1Sum;
 		document.getElementById('q6').innerHTML = srednia2Sum;
-		var srednia1Final = srednia1Sum / 8;
-		var srednia2Final = srednia2Sum / 8;
+		var srednia1Final = srednia1 / 8;
+		var srednia2Final = srednia2 / 8;
 		document.getElementById('q7').innerHTML = srednia1Final;
 		document.getElementById('q8').innerHTML = srednia2Final;
 		if (srednia1Final >= 150 || srednia2Final >= 150) {
@@ -543,6 +541,7 @@ function mpkFree(){
 		} else {
 			document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej. <br />Średnia1: " + srednia1Final + "<br />Średnia2:" + srednia2Final;
 		}
+		});
 	}
 }
 
