@@ -534,8 +534,8 @@ function mpkFree(){
 		srednia2Sum = document.getElementById('q4').innerHTML;
 		document.getElementById('q5').innerHTML = srednia1Sum;
 		document.getElementById('q6').innerHTML = srednia2Sum;
-		var srednia1Final = Number(srednia1Sum) / 8;
-		var srednia2Final = Number(srednia2Sum) / 8;
+		var srednia1Final = srednia1Sum / 8;
+		var srednia2Final = srednia2Sum / 8;
 		document.getElementById('q7').innerHTML = srednia1Final;
 		document.getElementById('q8').innerHTML = srednia2Final;
 		if (srednia1Final >= 150 || srednia2Final >= 150) {
