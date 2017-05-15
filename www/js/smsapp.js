@@ -38,7 +38,7 @@ var smsapp = {
 			": Wartość pomiaru: " + document.getElementById('stationO3').innerHTML + 
 			", Data pomiaru: " + document.getElementById('stationO3Date').innerHTML +
 			", Norma: " + document.getElementById('stationO3Norm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationO3Stan').innerHTML +*/;
+			", Stan powietrza: " + document.getElementById('stationO3Stan').innerHTML +*/
 			", Informacja MPK: " + document.getElementById('informacjaMPK').innerHTML;
 		} else {
 			message = document.getElementById('messageTxt').value;
