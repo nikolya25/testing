@@ -518,10 +518,12 @@ function mpkFree(){
 						suma1 = suma1 + dane1.values[x + y].value;
 					}
 					srednia1 = suma1 / 12;
+					document.getElementById('q2').innerHTML = srednia1;
 					for (var j = 7; j < 24; j++) {
 						suma2 = suma2 + dane1.values[x + j].value;
 					}
 					srednia2 = suma2 / 16;
+					document.getElementById('q4').innerHTML = srednia2;
 				}	
 			}
 		var srednia1Final = srednia1 / 8;
