@@ -526,31 +526,18 @@ function mpkFree(){
 					srednia2 = suma2 / 16;
 					document.getElementById('q4').innerHTML = srednia2;
 					break;
-				}
-				
+				}	
 			}
-			window.localStorage.setItem("srednia1ls", srednia1);
-			window.localStorage.setItem("srednia2ls", srednia2);
-
-			
 		});
-	
-	/*srednia1Sum = srednia1Sum + parseFloat(window.localStorage.getItem('srednia1ls'));
-	srednia2Sum = srednia2Sum + parseFloat(window.localStorage.getItem('srednia2ls'));
-	document.getElementById(z).innerHTML = parseFloat(window.localStorage.getItem('srednia1ls'));
-	window.localStorage.removeItem("srednia1ls");
-	window.localStorage.removeItem("srednia2ls");*/
-
-	}
-	document.getElementById('srednia1').innerHTML = srednia1;
-	document.getElementById('srednia2').innerHTML = srednia2;
-	var srednia1Final = srednia1 / 8;
-	var srednia2Final = srednia2 / 8;
-	if (srednia1Final >= 150 || srednia2Final >= 150) {
-		document.getElementById('informacjaMPK').innerHTML = "Z powodu wysokiego zanieczyszczenia powietrza jakie miało miejsce w dniu wczorajszym, w dniu dzisiejszym obowiązuje darmowa komunikacja miejska na terenie całego miasta Krakowa za okazaniem dowodu rejestracyjnego.";
-	}
-	else{
-		document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej"+ srednia1Final + " Srednia2:" + srednia2Final;
+		document.getElementById('srednia1').innerHTML = srednia1;
+		document.getElementById('srednia2').innerHTML = srednia2;
+		var srednia1Final = srednia1 / 8;
+		var srednia2Final = srednia2 / 8;
+		if (srednia1Final >= 150 || srednia2Final >= 150) {
+			document.getElementById('informacjaMPK').innerHTML = "Z powodu wysokiego zanieczyszczenia powietrza jakie miało miejsce w dniu wczorajszym, w dniu dzisiejszym obowiązuje darmowa komunikacja miejska na terenie całego miasta Krakowa za okazaniem dowodu rejestracyjnego.";
+		} else {
+			document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej. <br />Średnia1: " + srednia1Final + "<br />Średnia2:" + srednia2Final;
+		}
 	}
 }
 
