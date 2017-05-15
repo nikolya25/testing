@@ -526,7 +526,7 @@ function mpkFree(){
 					}
 					srednia2 = suma2 / 16;
 					document.getElementById('q4').innerHTML = srednia2;
-					break;
+					//break;
 				}	
 			}
 		});
@@ -534,6 +534,7 @@ function mpkFree(){
 		srednia2Sum = document.getElementById('q4').innerHTML;
 		document.getElementById('q5').innerHTML = srednia1Sum;
 		document.getElementById('q6').innerHTML = srednia2Sum;
+		document.getElementById('q7').innerHTML = srednia1;
 		var srednia1Final = Number(srednia1Sum) / 8;
 		var srednia2Final = Number(srednia2Sum) / 8;
 		if (srednia1Final >= 150 || srednia2Final >= 150) {
