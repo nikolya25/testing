@@ -3,7 +3,8 @@ var smsapp = {
         var number = document.getElementById('numberTxt').value;
         var message;
 		var tytul = document.getElementById('stationNameH').innerHTML;
-		switch (tytul) {
+		document.getElementById('messageTxt').placeholder = tytul;
+		/*switch (tytul) {
 		case "AntySMOG":
 			document.getElementById('messageTxt').placeholder = document.getElementById('informacjaMPK').innerHTML;
 			break;
@@ -52,7 +53,7 @@ var smsapp = {
 			message = document.getElementById('messageTxt').placeholder;
 		} else {
 			message = document.getElementById('messageTxt').value;
-		}
+		}*/
 
         //CONFIGURATION
         var options = {
