@@ -115,9 +115,7 @@ function station1dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station1NameH;
 	document.getElementById('stationNameHP').innerHTML = station1NameH;
-	function station1Holder() {
-		document.getElementById('messageTxt').placeholder = station1NameH + " " + document.getElementById('stationPM10Stan').innerHTML;
-	}
+	document.getElementById('messageTxt').placeholder = station1NameH + " " + station1StanH;
 }
 
 // ładowanie danych ze stacji 2 Kraków, ul. Dietla
