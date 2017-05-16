@@ -498,12 +498,7 @@ function mpkFree(){
 	var wczoraj23String = wczoraj23.toString();
 	var srednia1Sum = 0;
 	var srednia2Sum = 0;
-	//window.localStorage.setItem("srednia1ls", "0");
-	//window.localStorage.setItem("srednia2ls", "0");
-	var idTab=[16786, 16377, 2750, 2792, 17309, 16784, 2770, 17243];
-	/*for (var z = 0; z < 8; z++) {
-		document.getElementById(z).innerHTML = idTab[z];
-	}*/
+	var idTab=['16786','16377','2750','2792','17309','16784','2770','17243'];
 
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
@@ -528,20 +523,17 @@ function mpkFree(){
 					document.getElementById('q4').innerHTML = srednia2;
 				}	
 			}
-		srednia1Sum = document.getElementById('q2').innerHTML;
-		srednia2Sum = document.getElementById('q4').innerHTML;
-		var srednia1Final = srednia1 / 8;
-		var srednia2Final = srednia2 / 8;
-		document.getElementById('q7').innerHTML = srednia1Final;
-		document.getElementById('q8').innerHTML = srednia2Final;
-		if (srednia1Final >= 150 || srednia2Final >= 150) {
-			document.getElementById('informacjaMPK').innerHTML = "Z powodu wysokiego zanieczyszczenia powietrza jakie miało miejsce w dniu wczorajszym, w dniu dzisiejszym obowiązuje darmowa komunikacja miejska na terenie całego miasta Krakowa za okazaniem dowodu rejestracyjnego.";
-		} else {
-			document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej. <br />Średnia1: " + srednia1Final + "<br />Średnia2:" + srednia2Final;
-		}
+			srednia1Sum = document.getElementById('q2').innerHTML;
+			srednia2Sum = document.getElementById('q4').innerHTML;
+			var srednia1Final = srednia1 / 8;
+			var srednia2Final = srednia2 / 8;
+			document.getElementById('q7').innerHTML = srednia1Final;
+			document.getElementById('q8').innerHTML = srednia2Final;
+			if (srednia1Final >= 150 || srednia2Final >= 150) {
+				document.getElementById('informacjaMPK').innerHTML = "Z powodu wysokiego zanieczyszczenia powietrza jakie miało miejsce w dniu wczorajszym, w dniu dzisiejszym obowiązuje darmowa komunikacja miejska na terenie całego miasta Krakowa za okazaniem dowodu rejestracyjnego.";
+			} else {
+				document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej. <br />Średnia1: " + srednia1Final + "<br />Średnia2:" + srednia2Final;
+			}
 		});
 	}
 }
-
-
-

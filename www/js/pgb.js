@@ -45,7 +45,7 @@ function stationsAndMeOnMap() {
 		document.getElementById('station8Stan').innerHTML,
 	]
 	var icons = [];
-	for (i = 0; i < stStany.length; i++) {
+	for (var i = 0; i < stStany.length; i++) {
 		switch (stStany[i]) {
 		case "Bardzo dobry":
 			icons[i] = 'blue';  // green = lime

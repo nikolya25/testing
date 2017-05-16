@@ -2,44 +2,58 @@ var smsapp = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
         var message;
-		// nie widzę sensu w tym sms'ie (dla tego zostawiłem tylko część), ale działa, 
+		var tytul = document.getElementById('stationNameH').innerHTML;
+		if (tytuł === "AntySMOG") {
+			document.getElementById('messageTxt').placeholder = document.getElementById('informacjaMPK').innerHTML;
+		} else {
+			switch (tytuł) {
+			case "AntySMOG":
+				document.getElementById('messageTxt').placeholder = document.getElementById('informacjaMPK').innerHTML;
+				break;
+			case "Kraków, ul. Złoty Róg":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station1Stan').innerHTML;
+				break;
+			case "Kraków, ul. Dietla":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station2Stan').innerHTML;
+				break;
+			case "Kraków, Aleja Krasińskiego":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station3Stan').innerHTML;
+				break;
+			case "Kraków, ul. Bulwarowa":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station4Stan').innerHTML;
+				break;
+			case "Kraków, os. Wadów":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station5Stan').innerHTML;
+					break;
+			case "Kraków, os. Piastów":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station6Stan').innerHTML;
+					break;
+			case "Kraków, ul. Bujaka":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station7Stan').innerHTML;
+					break;
+			case "Kraków, ul. Telimeny":
+				document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
+				document.getElementById('stationNameH').innerHTML + " jest " + 
+				document.getElementById('station8Stan').innerHTML;
+			}
+			message = document.getElementById('messageTxt').placeholder;
+		}
 		if (document.getElementById('messageTxt').value === "") {
-			message = /*document.getElementById('pzPM10').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationPM10').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationPM10Date').innerHTML +
-			", Norma: " + document.getElementById('stationPM10Norm').innerHTML +*/
-			",  Stan powietrza: " + document.getElementById('stationPM10Stan').innerHTML +
-			/*", " + document.getElementById('daNO2').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationNO2').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationNO2Date').innerHTML +
-			", Norma: " + document.getElementById('stationNO2Norm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationNO2Stan').innerHTML +
-			", " + document.getElementById('twCO').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationCO').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationCODate').innerHTML +
-			", Norma: " + document.getElementById('stationCONorm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationCOStan').innerHTML +
-			", " + document.getElementById('bC6H6').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationBenzen').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationBenzenDate').innerHTML +
-			", Norma: " + document.getElementById('stationBenzenNorm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationBenzenStan').innerHTML +
-			", " + document.getElementById('pzPM25').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationPM25').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationPM25Date').innerHTML +
-			", Norma: " + document.getElementById('stationPM25Norm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationPM25Stan').innerHTML +
-			", " + document.getElementById('dsSO2').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationSO2').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationSO2Date').innerHTML +
-			", Norma: " + document.getElementById('stationSO2Norm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationSO2Stan').innerHTML +
-			", " + document.getElementById('oO3').innerHTML + 
-			": Wartość pomiaru: " + document.getElementById('stationO3').innerHTML + 
-			", Data pomiaru: " + document.getElementById('stationO3Date').innerHTML +
-			", Norma: " + document.getElementById('stationO3Norm').innerHTML +
-			", Stan powietrza: " + document.getElementById('stationO3Stan').innerHTML +*/
-			", Informacja MPK: " + document.getElementById('informacjaMPK').innerHTML;
+			message = document.getElementById('messageTxt').placeholder;
 		} else {
 			message = document.getElementById('messageTxt').value;
 		}
