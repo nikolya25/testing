@@ -523,32 +523,33 @@ function mpkFree(){
 	var wczoraj23String = wczoraj23.toString();
 	var srednia1Sum = 0;
 	var srednia2Sum = 0;
+	var suma1;
+	var suma2;
 	var srednia1 = 0;
 	var srednia2 = 0;
 	var idTab=['16786','16377','2750','2792','17309','16784','2770','17243'];
 
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {2;
-			
 			for (var x = 0; x < 30; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
 					document.getElementById('data9').innerHTML = dane1.values[x].date;
 					for (var y = 0; y < 12; y++) {
-						var suma1;
 						suma1 =+ dane1.values[x + y].value;
 						document.getElementById('q1').innerHTML = suma1;
 					}
-					srednia1 = suma1 / 12;
 					document.getElementById('q2').innerHTML = srednia1;
 					for (var j = 7; j < 24; j++) {
-						var suma2;
 						suma2 =+ dane1.values[x + j].value;
 						document.getElementById('q3').innerHTML = suma2;
 					}
-					srednia2 = suma2 / 16;
 					document.getElementById('q4').innerHTML = srednia2;
 				}	
 			}
+		});
+	}
+	srednia1 = suma1 / 12;
+			srednia2 = suma2 / 16;
 			srednia1Sum = document.getElementById('q2').innerHTML;
 			srednia2Sum = document.getElementById('q4').innerHTML;
 			var srednia1Final = srednia1 / 8;
@@ -560,7 +561,4 @@ function mpkFree(){
 			} else {
 				document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej. <br />Średnia1: " + srednia1Final + "<br />Średnia2:" + srednia2Final;
 			}
-			
-		});
-	}
 }
