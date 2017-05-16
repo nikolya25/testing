@@ -107,10 +107,10 @@
 					<input id="numberTxt" placeholder="Wprowadź numer" value="" type="tel" />
 					<textarea id="messageTxt" placeholder="Wprowadź powiadomienie"></textarea>
 					<script>
-						function loadHolders() {
+						(function loadHolders() {
 							var tytul = document.getElementById('stationNameH').innerHTML;
 							document.getElementById('messageTxt').placeholder = tytul;
-						}
+						})
 					</script>
 					<input type="button" onclick="smsapp.sendSms()" value="Wyślij" />
 				</form>
