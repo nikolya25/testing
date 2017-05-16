@@ -1,14 +1,15 @@
-var smsapp = {
-    var number;
-	var message;
-	var tytuł;
-	
-	loadHolders: function() {
-		this.number = document.getElementById('numberTxt').value;
-        this.message;
-		this.tytul = document.getElementById('stationNameH').innerHTML;
+var number;
+var message;
+
+function loadHolders() {
+		number = document.getElementById('numberTxt').value;
+        message;
+		var tytul = document.getElementById('stationNameH').innerHTML;
 		document.getElementById('messageTxt').placeholder = tytul;
 	}
+
+
+var smsapp = {
 	sendSms: function() {
         
 		/*switch (tytul) {
