@@ -7,6 +7,7 @@ var normaPM25 = 25;
 var normaSO2 = 125;
 var normaO3 = 120;
 var station1NameH, station2NameH, station3NameH, station4NameH, station5NameH, station6NameH, station7NameH, station8NameH;
+var station1StanH, station2StanH, station3StanH, station4StanH, station5StanH, station6StanH, station7StanH, station8StanH;
 $.ajax({
 	method: "GET",
 	url: "http://api.gios.gov.pl/pjp-api/rest/station/findAll",
@@ -20,7 +21,8 @@ $.ajax({
 	    	station1NameH = data[x].stationName;
     		document.getElementById('station1Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan1 ) {
-			  document.getElementById('station1Stan').innerHTML = stan1.stIndexLevel.indexLevelName;
+			  station1StanH = stan1.stIndexLevel.indexLevelName;
+			  document.getElementById('station1Stan').innerHTML = station1StanH;
 			});
 		}
 
@@ -113,7 +115,8 @@ function station1dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station1NameH;
 	document.getElementById('stationNameHP').innerHTML = station1NameH;
-	smsHolder(station1NameH);
+	document.getElementById('messageTxt').placeholder = station1NameH + " " + document.getElementById('stationPM10Stan').innerHTML;
+
 }
 
 // ładowanie danych ze stacji 2 Kraków, ul. Dietla
@@ -386,6 +389,7 @@ function station6dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station6NameH;
 	document.getElementById('stationNameHP').innerHTML = station6NameH;
+	
 }
 
 // ładowanie danych ze stacji 7 Kraków, ul. Bujaka
@@ -545,8 +549,4 @@ function mpkFree(){
 			}
 		});
 	}
-}
-
-function smsHolder() {
-	document.getElementById('messageTxt').placeholder = station1NameH + " " + document.getElementById('stationPM10Stan').innerHTML;
 }
