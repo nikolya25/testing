@@ -527,27 +527,39 @@ function mpkFree(){
 
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
-			var suma1 = 0;
-			var suma2 = 0;
-			var srednia1;
-			var srednia2;
+
 			for (var x = 0; x < 30; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
 					document.getElementById('data9').innerHTML = dane1.values[x].date;
-					for (var y = 0; y < 12; y++) {
-						suma1 = suma1 + dane1.values[x + y].value;
-						document.getElementById('q1').innerHTML = suma1;
+					var suma1 = 0;
+					var suma2 = 0;
+					var srednia1 = 0;
+					var srednia2 = 0;
+					function sum1Search() {
+						for (var y = 0; y < 12; y++) {
+							suma1 = suma1 + dane1.values[x + y].value;
+							document.getElementById('q1').innerHTML = suma1;
+						}
+						srednia1 = suma1 / 12;
+						return srednia1;
 					}
-					srednia1 = suma1 / 12;
-					document.getElementById('q2').innerHTML =+ srednia1;
-					for (var j = 7; j < 24; j++) {
-						suma2 = suma2 + dane1.values[x + j].value;
-						document.getElementById('q3').innerHTML = suma2;
+					function sum1Vision() {
+						document.getElementById('q2').innerHTML =+ srednia1;
 					}
-					srednia2 = suma2 / 16;
-					document.getElementById('q4').innerHTML =+ srednia2;
+					function sum2Search() {
+						for (var j = 7; j < 24; j++) {
+							suma2 = suma2 + dane1.values[x + j].value;
+							document.getElementById('q3').innerHTML = suma2;
+						}
+						srednia2 = suma2 / 16;
+						return srednia2;
+					}
+					function sum2Vision() {
+						document.getElementById('q4').innerHTML =+ srednia2;
+					}
 				}	
 			}
+			
 		});
 	}
 	srednia1Sum = document.getElementById('q2').innerHTML;
