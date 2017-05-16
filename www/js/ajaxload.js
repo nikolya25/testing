@@ -529,8 +529,8 @@ function mpkFree(){
 
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
-			var suma1 = 0;
-			var suma2 = 0;
+			var suma1;
+			var suma2;
 			
 			for (var x = 0; x < 30; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
