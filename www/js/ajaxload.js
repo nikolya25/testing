@@ -124,7 +124,7 @@ function station1dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station1NameH;
 	document.getElementById('stationNameHP').innerHTML = station1NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station1NameH + " jest " + station1StanH + ". Stężenie pyłu PM10 wynosi " + station1PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station1NameH + " jest " + station1StanH + ". Stężenie pyłu PM10 wynosi " + station1PM10Norm + "%";
 }
 
 // ładowanie danych ze stacji 2 Kraków, ul. Dietla
@@ -160,11 +160,10 @@ function station2dane(){
 	$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/10121", function( stan ) {
 			  document.getElementById('stationPM10Stan').innerHTML = stan.pm10IndexLevel.indexLevelName;
 			  document.getElementById('stationNO2Stan').innerHTML = stan.no2IndexLevel.indexLevelName;
-
 			})
 	document.getElementById('stationNameH').innerHTML = station2NameH;
 	document.getElementById('stationNameHP').innerHTML = station2NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station2NameH + " jest " + station2StanH + ". Stężenie pyłu PM10 wynosi " + station2PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station2NameH + " jest " + station2StanH + ". Stężenie pyłu PM10 wynosi " + station2PM10Norm + "%";
 }
 
 // ładowanie danych ze stacji 3 Kraków, Aleja Krasińskiego
@@ -251,7 +250,7 @@ function station3dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station3NameH;
 	document.getElementById('stationNameHP').innerHTML = station3NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station3NameH + " jest " + station3StanH + ". Stężenie pyłu PM10 wynosi " + station3PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station3NameH + " jest " + station3StanH + ". Stężenie pyłu PM10 wynosi " + station3PM10Norm + "%";
 }
 
 // ładowanie danych ze stacji 4 Kraków, ul. Bulwarowa
@@ -353,7 +352,7 @@ function station4dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station4NameH;
 	document.getElementById('stationNameHP').innerHTML = station4NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station4NameH + " jest " + station4StanH + ". Stężenie pyłu PM10 wynosi " + station4PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station4NameH + " jest " + station4StanH + ". Stężenie pyłu PM10 wynosi " + station4PM10Norm + "%";
 }
 
 // ładowanie danych ze stacji 5 Kraków, os. Wadów
@@ -378,7 +377,7 @@ function station5dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station5NameH;
 	document.getElementById('stationNameHP').innerHTML = station5NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station5NameH + " jest " + station5StanH + ". Stężenie pyłu PM10 wynosi " + station5PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station5NameH + " jest " + station5StanH + ". Stężenie pyłu PM10 wynosi " + station5PM10Norm + "%";
 }
 
 
@@ -406,7 +405,7 @@ function station6dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station6NameH;
 	document.getElementById('stationNameHP').innerHTML = station6NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station6NameH + " jest " + station6StanH + ". Stężenie pyłu PM10 wynosi " + station6PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station6NameH + " jest " + station6StanH + ". Stężenie pyłu PM10 wynosi " + station6PM10Norm + "%";
 }
 
 // ładowanie danych ze stacji 7 Kraków, ul. Bujaka
@@ -493,7 +492,7 @@ function station7dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station7NameH;
 	document.getElementById('stationNameHP').innerHTML = station7NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station7NameH + " jest " + station7StanH + ". Stężenie pyłu PM10 wynosi " + station7PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station7NameH + " jest " + station7StanH + ". Stężenie pyłu PM10 wynosi " + station7PM10Norm + "%";
 }
 
 // ładowanie danych ze stacji 8 Kraków, ul. Telimeny
@@ -518,7 +517,7 @@ function station8dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station8NameH;
 	document.getElementById('stationNameHP').innerHTML = station8NameH;
-	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station8NameH + " jest " + station8StanH  + ". Stężenie pyłu PM10 wynosi " + station8PM10Norm + "%";
+	document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station8NameH + " jest " + station8StanH  + ". Stężenie pyłu PM10 wynosi " + station8PM10Norm + "%";
 }
 
 // funkcja do sprawdzania czy jest darmowe mpk
@@ -576,7 +575,7 @@ function mpkFree(){
 			document.getElementById('informacjaMPK').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej";
 			document.getElementById('srednia1Jest').innerHTML = "Średnia 1: " + srednia1Final;
 			document.getElementById('srednia2Jest').innerHTML = "Średnia 2: " + srednia2Final;
-			document.getElementById('messageTxt').placeholder = document.getElementById('informacjaMPK').innerHTML;
+			document.getElementById('messageTxt').value = document.getElementById('informacjaMPK').innerHTML;
 
 		}
 	}
