@@ -539,17 +539,15 @@ function mpkFree(){
 						document.getElementById('q1').innerHTML = suma1;
 					}
 					srednia1 = suma1 / 12;
-					document.getElementById('q2').innerHTML = srednia1;
+					document.getElementById('q2').innerHTML = +srednia1;
 					for (var j = 7; j < 24; j++) {
 						suma2 = suma2 + dane1.values[x + j].value;
 						document.getElementById('q3').innerHTML = suma2;
 					}
 					srednia2 = suma2 / 16;
-					document.getElementById('q4').innerHTML = srednia2;
+					document.getElementById('q4').innerHTML = +srednia2;
 				}	
 			}
-			document.getElementById('q5').innerHTML =+ srednia1;
-			document.getElementById('q6').innerHTML =+ srednia2;
 		});
 	}
 	srednia1Sum = document.getElementById('q2').innerHTML;
