@@ -548,13 +548,16 @@ function mpkFree(){
 					document.getElementById('q4').innerHTML = srednia2;
 				}	
 			}
-			addssrednie(srednia1, srednia2);
+			add1(srednia1);
+			add2(srednia2);
 		});
 	}
 	
-	function addssrednie (sr1, sr2) {
+	function add1 (sr1) {
+		return  sr1;
+	}
+	function v1() {
 		document.getElementById('q5').innerHTML =+ sr1;
-		document.getElementById('q6').innerHTML =+ sr2;
 	}
 
 		var srednia1Final = srednia1 / 8;
