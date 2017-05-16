@@ -526,11 +526,11 @@ function mpkFree(){
 	var idTab=['16786','16377','2750','2792','17309','16784','2770','17243'];
 
 	for (var z = 0; z < 8; z++) {
-		var suma1;
+		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
+			var suma1;
 			var suma2;
 			var srednia1;
 			var srednia2;
-		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
 			for (var x = 0; x < 30; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
 					document.getElementById('data9').innerHTML = dane1.values[x].date;
