@@ -553,8 +553,8 @@ function mpkFree(){
 	}
 	
 	function addssrednie (sr1, sr2) {
-		document.getElementById('q5').innerHTML = sr1;
-		document.getElementById('q6').innerHTML = sr2;
+		document.getElementById('q5').innerHTML =+ sr1;
+		document.getElementById('q6').innerHTML =+ sr2;
 	}
 
 		var srednia1Final = srednia1 / 8;
