@@ -21,8 +21,8 @@ $.ajax({
 	    	station1NameH = data[x].stationName;
     		document.getElementById('station1Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan1 ) {
-			  station1StanH = stan1.stIndexLevel.indexLevelName;
-			  document.getElementById('station1Stan').innerHTML = station1StanH;
+				station1StanH = stan1.stIndexLevel.indexLevelName;
+				document.getElementById('station1Stan').innerHTML = station1StanH;
 			});
 		}
 
@@ -32,7 +32,8 @@ $.ajax({
 	    	station2NameH = data[x].stationName;
     		document.getElementById('station2Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan2 ) {
-			  document.getElementById('station2Stan').innerHTML = stan2.stIndexLevel.indexLevelName;
+				station2StanH = stan2.stIndexLevel.indexLevelName;
+				document.getElementById('station2Stan').innerHTML = station2StanH;			
 			});
 		}
 		//Kraków, Aleja Krasińskiego
@@ -41,7 +42,8 @@ $.ajax({
 	    	station3NameH = data[x].stationName;
     		document.getElementById('station3Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan3 ) {
-			  document.getElementById('station3Stan').innerHTML = stan3.stIndexLevel.indexLevelName;
+				station3StanH = stan3.stIndexLevel.indexLevelName;
+				document.getElementById('station3Stan').innerHTML = station3StanH;			
 			});
 		}
 		//Kraków, ul. Bulwarowa
@@ -50,7 +52,8 @@ $.ajax({
 	    	station4NameH = data[x].stationName;
     		document.getElementById('station4Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan4 ) {
-			  document.getElementById('station4Stan').innerHTML = stan4.stIndexLevel.indexLevelName;
+				station4StanH = stan4.stIndexLevel.indexLevelName;
+				document.getElementById('station4Stan').innerHTML = station4StanH;			
 			});
 		}
 		//Kraków, os. Wadów
@@ -59,7 +62,8 @@ $.ajax({
 	    	station5NameH = data[x].stationName;
     		document.getElementById('station5Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan5 ) {
-			  document.getElementById('station5Stan').innerHTML = stan5.stIndexLevel.indexLevelName;
+				station5StanH = stan5.stIndexLevel.indexLevelName;
+				document.getElementById('station5Stan').innerHTML = station5StanH;			
 			});
 		}
 		//Kraków, os. Piastów
@@ -68,7 +72,8 @@ $.ajax({
 	    	station6NameH = data[x].stationName;
     		document.getElementById('station6Adress').innerHTML = data[x].addressStreet;
 			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan6 ) {
-			  document.getElementById('station6Stan').innerHTML = stan6.stIndexLevel.indexLevelName;
+				station6StanH = stan6.stIndexLevel.indexLevelName;
+				document.getElementById('station6Stan').innerHTML = station6StanH;			
 			});
 		}
 		//Kraków, ul. Bujaka
@@ -76,8 +81,9 @@ $.ajax({
 	    	document.getElementById('station7Name').innerHTML = data[x].stationName;
 	    	station7NameH = data[x].stationName;
     		document.getElementById('station7Adress').innerHTML = data[x].addressStreet;
-			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan8 ) {
-			  document.getElementById('station7Stan').innerHTML = stan8.stIndexLevel.indexLevelName;
+			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan7 ) {
+				station7StanH = stan7.stIndexLevel.indexLevelName;
+				document.getElementById('station7Stan').innerHTML = station7StanH;			
 			});
 		}
 		//Kraków, ul. Telimeny
@@ -85,8 +91,9 @@ $.ajax({
 	    	document.getElementById('station8Name').innerHTML = data[x].stationName;
 	    	station8NameH = data[x].stationName;
     		document.getElementById('station8Adress').innerHTML = data[x].addressStreet;
-			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan9 ) {
-			  document.getElementById('station8Stan').innerHTML = stan9.stIndexLevel.indexLevelName;
+			$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+data[x].id, function( stan8 ) {
+				station8StanH = stan8.stIndexLevel.indexLevelName;
+				document.getElementById('station8Stan').innerHTML = station8StanH;			
 			});
 		}
 	}
@@ -154,6 +161,7 @@ function station2dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station2NameH;
 	document.getElementById('stationNameHP').innerHTML = station2NameH;
+	document.getElementById('messageTxt').placeholder = station2NameH + " " + station2StanH;
 }
 
 // ładowanie danych ze stacji 3 Kraków, Aleja Krasińskiego
@@ -239,6 +247,7 @@ function station3dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station3NameH;
 	document.getElementById('stationNameHP').innerHTML = station3NameH;
+	document.getElementById('messageTxt').placeholder = station3NameH + " " + station3StanH;
 }
 
 // ładowanie danych ze stacji 4 Kraków, ul. Bulwarowa
@@ -339,6 +348,7 @@ function station4dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station4NameH;
 	document.getElementById('stationNameHP').innerHTML = station4NameH;
+	document.getElementById('messageTxt').placeholder = station4NameH + " " + station4StanH;
 }
 
 // ładowanie danych ze stacji 5 Kraków, os. Wadów
@@ -362,6 +372,7 @@ function station5dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station5NameH;
 	document.getElementById('stationNameHP').innerHTML = station5NameH;
+	document.getElementById('messageTxt').placeholder = station5NameH + " " + station5StanH;
 }
 
 
@@ -388,7 +399,7 @@ function station6dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station6NameH;
 	document.getElementById('stationNameHP').innerHTML = station6NameH;
-	
+	document.getElementById('messageTxt').placeholder = station6NameH + " " + station6StanH;
 }
 
 // ładowanie danych ze stacji 7 Kraków, ul. Bujaka
@@ -474,6 +485,7 @@ function station7dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station7NameH;
 	document.getElementById('stationNameHP').innerHTML = station7NameH;
+	document.getElementById('messageTxt').placeholder = station7NameH + " " + station7StanH;
 }
 
 // ładowanie danych ze stacji 8 Kraków, ul. Telimeny
@@ -497,6 +509,7 @@ function station8dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station8NameH;
 	document.getElementById('stationNameHP').innerHTML = station8NameH;
+	document.getElementById('messageTxt').placeholder = station8NameH + " " + station8StanH;
 }
 
 // funkcja do sprawdzania czy jest darmowe mpk
