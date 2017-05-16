@@ -538,3 +538,5 @@ function mpkFree(){
 		});
 	}
 }
+var tytul = document.getElementById('stationNameH').innerHTML;
+document.getElementById('messageTxt').placeholder = tytul;
