@@ -113,6 +113,8 @@ function station1dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station1NameH;
 	document.getElementById('stationNameHP').innerHTML = station1NameH;
+	document.getElementById('messageTxt').placeholder = station1NameH + " " + stationPM10Stan;
+	
 }
 
 // ładowanie danych ze stacji 2 Kraków, ul. Dietla
@@ -150,6 +152,7 @@ function station2dane(){
 
 			})
 	document.getElementById('stationNameH').innerHTML = station2NameH;
+	document.getElementById('stationNameHP').innerHTML = station2NameH;
 }
 
 // ładowanie danych ze stacji 3 Kraków, Aleja Krasińskiego
@@ -234,6 +237,7 @@ function station3dane(){
 
 			})
 	document.getElementById('stationNameH').innerHTML = station3NameH;
+	document.getElementById('stationNameHP').innerHTML = station3NameH;
 }
 
 // ładowanie danych ze stacji 4 Kraków, ul. Bulwarowa
@@ -333,6 +337,7 @@ function station4dane(){
 
 			})
 	document.getElementById('stationNameH').innerHTML = station4NameH;
+	document.getElementById('stationNameHP').innerHTML = station4NameH;
 }
 
 // ładowanie danych ze stacji 5 Kraków, os. Wadów
@@ -355,6 +360,7 @@ function station5dane(){
 			  document.getElementById('stationPM10Stan').innerHTML = stan1PM10.pm10IndexLevel.indexLevelName;
 			})
 	document.getElementById('stationNameH').innerHTML = station5NameH;
+	document.getElementById('stationNameHP').innerHTML = station5NameH;
 }
 
 
@@ -380,6 +386,7 @@ function station6dane(){
 
 			})
 	document.getElementById('stationNameH').innerHTML = station6NameH;
+	document.getElementById('stationNameHP').innerHTML = station6NameH;
 }
 
 // ładowanie danych ze stacji 7 Kraków, ul. Bujaka
@@ -464,6 +471,7 @@ function station7dane(){
 
 			})
 	document.getElementById('stationNameH').innerHTML = station7NameH;
+	document.getElementById('stationNameHP').innerHTML = station7NameH;
 }
 
 // ładowanie danych ze stacji 8 Kraków, ul. Telimeny
@@ -486,6 +494,7 @@ function station8dane(){
 			  document.getElementById('stationPM10Stan').innerHTML = stan1PM10.pm10IndexLevel.indexLevelName;
 			})
 	document.getElementById('stationNameH').innerHTML = station8NameH;
+	document.getElementById('stationNameHP').innerHTML = station8NameH;
 }
 
 // funkcja do sprawdzania czy jest darmowe mpk
@@ -538,5 +547,3 @@ function mpkFree(){
 		});
 	}
 }
-var tytul = document.getElementById('stationNameH').innerHTML;
-document.getElementById('messageTxt').placeholder = tytul;
