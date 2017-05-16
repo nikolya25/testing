@@ -1,17 +1,7 @@
-var number;
-var message;
-
-function loadHolders() {
-		number = document.getElementById('numberTxt').value;
-        message;
-		var tytul = document.getElementById('stationNameH').innerHTML;
-		document.getElementById('messageTxt').placeholder = tytul;
-	}
-
-
 var smsapp = {
-	sendSms: function() {
-        
+    sendSms: function() {
+        var number = document.getElementById('numberTxt').value;
+        var message;
 		/*switch (tytul) {
 		case "AntySMOG":
 			document.getElementById('messageTxt').placeholder = document.getElementById('informacjaMPK').innerHTML;
