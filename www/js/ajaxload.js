@@ -523,15 +523,14 @@ function mpkFree(){
 	var wczoraj23String = wczoraj23.toString();
 	var srednia1Sum = 0;
 	var srednia2Sum = 0;
-	var srednia1 = 0;
-	var srednia2 = 0;
 	var idTab=['16786','16377','2750','2792','17309','16784','2770','17243'];
 
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {
-			var suma1 = 0;
-			var suma2 = 0;
-			
+			var suma1;
+			var suma2;
+			var srednia1;
+			var srednia2;
 			for (var x = 0; x < 30; x++) {
 				if (dane1.values[x].date.toString() == wczoraj23String) {
 					document.getElementById('data9').innerHTML = dane1.values[x].date;
