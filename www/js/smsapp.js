@@ -3,7 +3,7 @@ var smsapp = {
         var number = document.getElementById('numberTxt').value;
         var message;
 		var tytul = document.getElementById('stationNameH').innerHTML;
-		if (tytuł === "AntySMOG") {
+		if (tytul === "AntySMOG") {
 			document.getElementById('messageTxt').placeholder = document.getElementById('informacjaMPK').innerHTML;
 		} else {
 			switch (tytuł) {
