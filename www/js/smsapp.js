@@ -45,13 +45,13 @@ var smsapp = {
 			document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + 
 			document.getElementById('stationNameH').innerHTML + " jest " + 
 			document.getElementById('station8Stan').innerHTML;
-		}
+		}*/
 		message = document.getElementById('messageTxt').placeholder;
 		if (document.getElementById('messageTxt').value === "") {
 			message = document.getElementById('messageTxt').placeholder;
 		} else {
 			message = document.getElementById('messageTxt').value;
-		}*/
+		}
 
         //CONFIGURATION
         var options = {

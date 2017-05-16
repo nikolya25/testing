@@ -197,8 +197,3 @@ function setupPush() {
         });
     });
 }
-
-function loadHolders() {
-	var tytul = document.getElementById('stationNameH').innerHTML;
-	document.getElementById('messageTxt').placeholder = tytul;
-}
