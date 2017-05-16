@@ -122,7 +122,7 @@ function station1dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station1NameH;
 	document.getElementById('stationNameHP').innerHTML = station1NameH;
-	document.getElementById('messageTxt').placeholder = station1NameH + " " + station1StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station1NameH + " jest " + station1StanH;
 }
 
 // ładowanie danych ze stacji 2 Kraków, ul. Dietla
@@ -161,7 +161,7 @@ function station2dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station2NameH;
 	document.getElementById('stationNameHP').innerHTML = station2NameH;
-	document.getElementById('messageTxt').placeholder = station2NameH + " " + station2StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station2NameH + " jest " + station2StanH;
 }
 
 // ładowanie danych ze stacji 3 Kraków, Aleja Krasińskiego
@@ -247,7 +247,7 @@ function station3dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station3NameH;
 	document.getElementById('stationNameHP').innerHTML = station3NameH;
-	document.getElementById('messageTxt').placeholder = station3NameH + " " + station3StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station3NameH + " jest " + station3StanH;
 }
 
 // ładowanie danych ze stacji 4 Kraków, ul. Bulwarowa
@@ -348,7 +348,7 @@ function station4dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station4NameH;
 	document.getElementById('stationNameHP').innerHTML = station4NameH;
-	document.getElementById('messageTxt').placeholder = station4NameH + " " + station4StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station4NameH + " jest " + station4StanH;
 }
 
 // ładowanie danych ze stacji 5 Kraków, os. Wadów
@@ -372,7 +372,7 @@ function station5dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station5NameH;
 	document.getElementById('stationNameHP').innerHTML = station5NameH;
-	document.getElementById('messageTxt').placeholder = station5NameH + " " + station5StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station5NameH + " jest " + station5StanH;
 }
 
 
@@ -399,7 +399,7 @@ function station6dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station6NameH;
 	document.getElementById('stationNameHP').innerHTML = station6NameH;
-	document.getElementById('messageTxt').placeholder = station6NameH + " " + station6StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station6NameH + " jest " + station6StanH;
 }
 
 // ładowanie danych ze stacji 7 Kraków, ul. Bujaka
@@ -485,7 +485,7 @@ function station7dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station7NameH;
 	document.getElementById('stationNameHP').innerHTML = station7NameH;
-	document.getElementById('messageTxt').placeholder = station7NameH + " " + station7StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station7NameH + " jest " + station7StanH;
 }
 
 // ładowanie danych ze stacji 8 Kraków, ul. Telimeny
@@ -509,7 +509,7 @@ function station8dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station8NameH;
 	document.getElementById('stationNameHP').innerHTML = station8NameH;
-	document.getElementById('messageTxt').placeholder = station8NameH + " " + station8StanH;
+	document.getElementById('messageTxt').placeholder = "Stan powietrza na stacji " + station8NameH + " jest " + toLowerCase(station8StanH);
 }
 
 // funkcja do sprawdzania czy jest darmowe mpk
