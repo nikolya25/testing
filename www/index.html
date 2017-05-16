@@ -105,9 +105,9 @@
 			<div data-role="main" class="ui-content">
 				<form id="sending">
 					<input id="numberTxt" placeholder="Wprowadź numer" value="" type="tel" />
-					<textarea id="messageTxt" placeholder="Wprowadź powiadomienie"></textarea>
+					<textarea id="messageTxt"></textarea>
 					<script>
-						(function loadHolders() {
+						(function() {
 							var tytul = document.getElementById('stationNameH').innerHTML;
 							document.getElementById('messageTxt').placeholder = tytul;
 						})();
