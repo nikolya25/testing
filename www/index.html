@@ -98,7 +98,7 @@
 		
 		<!-- Strona z powiadomieniami  i wysyłaniem sms -->
 		
-		<div data-role="page" id="powiadomienia" onload="loadHolders()">
+		<div data-role="page" id="powiadomienia">
 			<div data-role="header" data-position="fixed">
 				<h1>AntySMOG</h1>
 			</div>
@@ -107,8 +107,10 @@
 					<input id="numberTxt" placeholder="Wprowadź numer" value="" type="tel" />
 					<textarea id="messageTxt" placeholder="Wprowadź powiadomienie"></textarea>
 					<script>
-						var tytul = document.getElementById('stationNameH').innerHTML;
-						document.getElementById('messageTxt').placeholder = tytul;
+						function loadHolders() {
+							var tytul = document.getElementById('stationNameH').innerHTML;
+							document.getElementById('messageTxt').placeholder = tytul;
+						}
 					</script>
 					<input type="button" onclick="smsapp.sendSms()" value="Wyślij" />
 				</form>
