@@ -113,7 +113,7 @@ function station1dane(){
 			})
 	document.getElementById('stationNameH').innerHTML = station1NameH;
 	document.getElementById('stationNameHP').innerHTML = station1NameH;
-	document.getElementById('messageTxt').placeholder = station1NameH + " " + stationPM10Stan;
+	document.getElementById('messageTxt').placeholder = station1NameH + " " + document.getElementById('stationPM10Stan').innerHTML;
 	
 }
 
