@@ -12,7 +12,7 @@ function checkRadio() {
 	  	var interwal = "day";
 	  	return interwal;
 	}else if(document.getElementById('1minuta').checked) {
-		var interwal = 10*1000;
+		var interwal = 1;
 		return interwal;	
 	}
 }
@@ -30,14 +30,14 @@ function checkStation(){
 
 
 function ustawPowiadomienie(){
-	interwal = checkRadio();
-	pozwolenie = checkSlider();
-	stacja = checkStation();
+	var interwal = checkRadio();
+	var pozwolenie = checkSlider();
+	var stacja = checkStation();
 	localStorage.setItem("stacja", stacja);
 	localStorage.setItem("pozwolenie", pozwolenie);
 	localStorage.setItem("interwal", interwal);
 	if (localStorage.getItem("pozwolenie") == "on") {
-		self.timer = setInterval(function () {	
+		var timer = setInterval(function () {	
 			wykonajPomiar()
 		}, localStorage.getItem("interwal"));
 	}
@@ -62,7 +62,7 @@ function powiadomienia(pomiarPowiadomienieData){
 	  title: localStorage.getItem("nazwaStacji"),
 	  text: 'Stan powietrza: ' + pomiarPowiadomienieData,
 	  autoClear: false,
-	  at: new Date(new Date().getTime() + 10*1000)
+	  at: new Date(new Date().getTime() + 5*1000)
 	});
 }
 
