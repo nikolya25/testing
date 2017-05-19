@@ -1,8 +1,8 @@
 var smsapp = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value;
-		var message = document.getElementById('messageTxt').value;
-
+        var message = document.getElementById('messageTxt').value;
+		
         //CONFIGURATION
         var options = {
             replaceLineBreaks: false, // true to replace \n by a new line, false by default

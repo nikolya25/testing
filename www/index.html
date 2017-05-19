@@ -23,7 +23,7 @@
 					<li><a href="#pageone" class="ui-btn ui-btn-inline">Lista stacji pomiarowych</a></li>
 					<li><a href="#gps" class="ui-btn ui-btn-inline">Lokalizacja stacji</a></li>
 					<li><a href="#mpk" onclick="mpkFree()" class="ui-btn ui-btn-inline">Darmowa komunikacja miejska</a></li>
-					<li><a href="#powiadomienia" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
+					<li><a href="#powiadomieniaAndroid" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
 				</ul>
 			</div>
 			<div data-role="header" data-position="fixed">
@@ -72,10 +72,10 @@
 					<p>Stan jakości powietrza: <strong  id="station8Stan"></strong></p>
 				</a>
 			</div>
-		</div>
-		<div data-role="footer" data-position="fixed">
-			<h1>AntySMOG Ltd.</h1>
-		</div> 
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h1>AntySMOG Ltd.</h1>
+			</div> 
 		</div>
 		
 		<!-- Strona z lokalizacją gps i mapami google -->
@@ -93,7 +93,7 @@
 			</div> 
 		</div> 
 		
-		<!-- Strona z powiadomieniami  i wysyłaniem sms -->
+		<!-- Strona z  wysyłaniem sms -->
 		
 		<div data-role="page" id="powiadomienia">
 			<div data-role="header" data-position="fixed">
@@ -111,9 +111,9 @@
 			</div> 
 		</div>
 
-		<!-- Strona z informacją o darmowym mpk -->
+		<!-- Strona z informacją o drmowym mpk -->
 		
-	<div data-role="page" id="mpk">
+		<div data-role="page" id="mpk">
 			<div data-role="header" data-position="fixed">
 				<h1>AntySMOG</h1>
 				<a href="#powiadomienia" class="ui-btn ui-icon-comment ui-btn-icon-left">Prześlij znajomemu</a>
@@ -131,6 +131,51 @@
 				<div id="informacjaMPK"></div>
 				<p id="srednia1Jest"></p>
 				<p id="srednia2Jest"></p>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h1>AntySMOG Ltd.</h1>
+			</div> 
+		</div>
+
+		<!-- Strona z  powiadomieniami android -->
+		
+		<div data-role="page" id="powiadomieniaAndroid">
+			<div data-role="header" data-position="fixed">
+				<h1 id="stationNameHP">Ustawienia Powiadomień</h1>
+			</div>
+			<div data-role="main" class="ui-content">
+
+				<label for="slider2">Chcesz dostawać powiadomienia?</label>
+				<select name="slider2" id="slider2" data-role="slider">
+				    <option value="off">Nie</option>
+				    <option value="on">Tak</option>
+				</select>
+
+				<fieldset data-role="controlgroup">
+			    <legend>Wyświetlanie powiadomień:</legend>
+			        <input type="radio" name="powiadomieniaUstawCzas" id="1godzina" value="choice1" >
+			        <label for="1godzina">Co 1 godzinę</label>
+			        <input type="radio" name="powiadomieniaUstawCzas" id="24godziny" value="choice2">
+			        <label for="24godziny">Co 24 godziny</label>
+			        <input type="radio" name="powiadomieniaUstawCzas" id="1minuta" value="choice3">
+			        <label for="1minuta">Co 1 minuta</label>									<!-- Opcja stwożona aby zaprezentować funkcjonalność  -->
+				</fieldset>
+
+				<label for="select-choice-a" class="select">Stacja do powiadomień:</label>
+				<select name="select-choice-a" id="stationChoice" data-native-menu="false">
+				    <option>Wybierz stację</option>
+				    <option value="10123" id="optName1" ></option>
+				    <option value="10121" id="optName2"></option>
+				    <option value="400" id="optName3"></option>
+				    <option value="402" id="optName4"></option>
+				    <option value="10447" id="optName5" ></option>
+				    <option value="10139" id="optName6"></option>
+				    <option value="401" id="optName7"></option>
+				    <option value="10435" id="optName8"></option>
+				</select>
+
+				<a href="#" onclick="ustawPowiadomienie()" class="ui-btn ui-btn-inline">Zapisz zmiany</a>
+
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>AntySMOG Ltd.</h1>
@@ -176,7 +221,7 @@
 			      <li><a href="#">Norma: <strong id="stationBenzenNorm">-</strong>%</a></li>
 			      <li><a href="#">Stan powietrza: <strong id="stationBenzenStan">-</strong></a></li>
 			    </ul>
-			    <h2 id="pzPM25">Pył zawieszony PM2.5:</h2>
+			    <h2 id="pzPM25">pył zawieszony PM2.5:</h2>
 				<ul data-role="listview">
 			      <li><a href="#">Wartość pomiaru: <strong id="stationPM25">-</strong></a></li>
 			      <li><a href="#">Data pomiaru: <strong id="stationPM25Date">-</strong></a></li>
@@ -205,5 +250,6 @@
 		<script src="js/ajaxload.js"></script>
 		<script src="js/pgb.js"></script>
 		<script src="js/smsapp.js"></script>
+		<script src="js/powiadomienia.js"></script>
 	</body>
 </html>

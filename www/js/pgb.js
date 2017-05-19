@@ -45,7 +45,7 @@ function stationsAndMeOnMap() {
 		document.getElementById('station8Stan').innerHTML,
 	]
 	var icons = [];
-	for (var i = 0; i < stStany.length; i++) {
+	for (i = 0; i < stStany.length; i++) {
 		switch (stStany[i]) {
 		case "Bardzo dobry":
 			icons[i] = 'blue';  // green = lime
@@ -119,7 +119,7 @@ function stationsAndMeOnMap() {
 	
 	function addMarkers(data, callback) {
 		for (var i = 0; i < data.length; i++) {
-			map.addMarker(data[i]);
+			map.addMarker(data[i])
 		}
 	}
 		
@@ -130,7 +130,7 @@ function stationsAndMeOnMap() {
 	var onSuccess = function(position) {
 		myLat = position.coords.latitude;
 		myLng = position.coords.longitude;
-		
+
 		for (var i = 0; i < data.length; i++) {
 			stla[i] = data[i];
 		}
