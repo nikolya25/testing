@@ -39,7 +39,7 @@ function ustawPowiadomienie(){
 	if (localStorage.getItem("pozwolenie") == "on") {
 		self.timer = setInterval(function () {	
 			wykonajPomiar()
-		}, interwal);
+		}, localStorage.getItem("interwal"));
 	}
 	else{
 		powiadomieniaBrak()
