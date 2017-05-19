@@ -12,7 +12,7 @@ function checkRadio() {
 	  	var interwal = "day";
 	  	return interwal;
 	}else if(document.getElementById('1minuta').checked) {
-		var interwal = "minute";
+		var interwal = 10*1000;
 		return interwal;	
 	}
 }
@@ -39,7 +39,7 @@ function ustawPowiadomienie(){
 	if (localStorage.getItem("pozwolenie") == "on") {
 		self.timer = setInterval(function () {	
 			wykonajPomiar()
-		}, 10*1000);
+		}, interwal);
 	}
 	else{
 		powiadomieniaBrak()
@@ -49,22 +49,18 @@ function ustawPowiadomienie(){
 function wykonajPomiar(){
 	$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+localStorage.getItem("stacja"), function( stan3 ) {
 		pomiarPowiadomienie = stan3.stIndexLevel.indexLevelName;
-		var datka = new Date();
-		localStorage.setItem("pomiar", datka);	
-		powiadomienia(datka);
+		powiadomienia(pomiarPowiadomienie);
 	});
-	//return localStorage.getItem("pomiar");
 }
 
 
 
 
-function powiadomienia(datas){
+function powiadomienia(pomiarPowiadomienieData){
 	cordova.plugins.notification.local.schedule({
 	  id: 1,
 	  title: localStorage.getItem("nazwaStacji"),
-	  text: 'Stan powietrza: ' + datas,
-	  //every: localStorage.getItem("interwal"), //, "hour", "week", "month", "year"
+	  text: 'Stan powietrza: ' + pomiarPowiadomienieData,
 	  autoClear: false,
 	  at: new Date(new Date().getTime() + 10*1000)
 	});
