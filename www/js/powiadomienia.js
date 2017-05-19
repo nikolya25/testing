@@ -47,13 +47,13 @@ function ustawPowiadomienie(){
 }
 
 function wykonajPomiar(){
-		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+localStorage.getItem("stacja"), function( stan3 ) {
-				pomiarPowiadomienie = stan3.stIndexLevel.indexLevelName;
-				localStorage.setItem("pomiar", pomiarPowiadomienie);			
-			});
+	$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+localStorage.getItem("stacja"), function( stan3 ) {
+		pomiarPowiadomienie = stan3.stIndexLevel.indexLevelName;
+		var datka = new Date();
+		localStorage.setItem("pomiar", datka);	
+		powiadomienia(datka);
+	});
 	//return localStorage.getItem("pomiar");
-	var datka = new Date();
-	powiadomienia(datka);
 }
 
 
