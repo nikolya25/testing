@@ -12,7 +12,7 @@ function checkRadio() {
 	  	var interwal = "day";
 	  	return interwal;
 	}else if(document.getElementById('1minuta').checked) {
-		var interwal = 1;
+		var interwal = 10*1000;
 		return interwal;	
 	}
 }
