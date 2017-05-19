@@ -22,17 +22,17 @@ function checkSlider(){
 }
 
 function checkStation(){
-	var asd = document.getElementById('stationChoice').options[document.getElementById('stationChoice').selectedIndex].value;
-	var qwerty = document.getElementById('stationChoice').options[document.getElementById('stationChoice').selectedIndex].innerHTML;
-	localStorage.setItem("nazwaStacji", qwerty);
-	return asd;
+	var nazwaWybranejStacji = document.getElementById('stationChoice').options[document.getElementById('stationChoice').selectedIndex].value;
+	var kodWybranejStacji = document.getElementById('stationChoice').options[document.getElementById('stationChoice').selectedIndex].innerHTML;
+	localStorage.setItem("nazwaStacji", kodWybranejStacji);
+	return nazwaWybranejStacji;
 }
 
 
 function ustawPowiadomienie(){
 	interwal = checkRadio();
 	pozwolenie = checkSlider();
-	stacja= checkStation();
+	stacja = checkStation();
 	localStorage.setItem("stacja", stacja);
 	localStorage.setItem("pozwolenie", pozwolenie);
 	localStorage.setItem("interwal", interwal);
@@ -49,7 +49,8 @@ function wykonajPomiar(){
 				pomiarPowiadomienie = stan3.stIndexLevel.indexLevelName;
 				localStorage.setItem("pomiar", pomiarPowiadomienie);			
 			});
-	return localStorage.getItem("pomiar");
+	//return localStorage.getItem("pomiar");
+	return new Date();
 }
 
 
