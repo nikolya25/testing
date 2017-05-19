@@ -45,12 +45,14 @@ function ustawPowiadomienie(){
 }
 
 function wykonajPomiar(){
-	$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+localStorage.getItem("stacja"), function( stan3 ) {
+	self.timer = setInterval(function () {	
+		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/"+localStorage.getItem("stacja"), function( stan3 ) {
 				pomiarPowiadomienie = stan3.stIndexLevel.indexLevelName;
 				localStorage.setItem("pomiar", pomiarPowiadomienie);			
 			});
 	//return localStorage.getItem("pomiar");
 	return new Date();
+	}, 60*1000);
 }
 
 
