@@ -37,7 +37,9 @@ function ustawPowiadomienie(){
 	localStorage.setItem("pozwolenie", pozwolenie);
 	localStorage.setItem("interwal", interwal);
 	if (localStorage.getItem("pozwolenie") == "on") {
-		wykonajPomiar()
+		self.timer = setInterval(function () {	
+			wykonajPomiar()
+		}, 10*1000);
 	}
 	else{
 		powiadomieniaBrak()
@@ -62,7 +64,6 @@ function powiadomienia(datas){
 	  id: 1,
 	  title: localStorage.getItem("nazwaStacji"),
 	  text: 'Stan powietrza: ' + datas,
-	  sound: null,
 	  //every: localStorage.getItem("interwal"), //, "hour", "week", "month", "year"
 	  autoClear: false,
 	  at: new Date(new Date().getTime() + 10*1000)
