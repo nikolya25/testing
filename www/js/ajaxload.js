@@ -587,7 +587,7 @@ function mpkFree(){
 		if (srednia1Final >= 150 || srednia2Final >= 150) {
 			document.getElementById('informacjaMPK').innerHTML = '<strong><em>"Z powodu wysokiego zanieczyszczenia powietrza jakie miało miejsce w dniu wczorajszym, w dniu dzisiejszym obowiązuje darmowa komunikacja miejska na terenie całego miasta Krakowa za okazaniem dowodu rejestracyjnego"<em></strong>';
 		} else {
-			document.getElementById('informacjaMPK').innerHTML = '<strong><em>"Jest brak podstaw do ogłoszenia darmowej komunikacji miejskiej"</em></strong>';
+			document.getElementById('informacjaMPK').innerHTML = '<strong><em>"Brak podstaw do ogłoszenia darmowej komunikacji miejskiej"</em></strong>';
 		}
 		document.getElementById('data9').innerHTML = "W dniu dzisiejszym tzn. " + currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth() + 1) + "-"  + leadingZero(currentDate.getDate()) + " MPK S.A. w Krakowie informuje:";
 		document.getElementById('srednieJest').innerHTML = "Podstawą tego są dane pomiarowe jakości powietrza otrzymane: " + wczoraj23 + ", kiedy, średnie pomiarów na wszystkich stacjach wynosiły " + srednia1Final + " i " + srednia2Final;
