@@ -81,7 +81,17 @@
 		<!-- Strona z lokalizacją gps i mapami google -->
 		
 		<div data-role="page" id="gps">
+			<div data-role="panel" id="myPanelGPS" data-display="overlay">
+				<h2>Menu</h2>
+				<ul data-role="listview" id="sortedList">
+					<li><a href="#pageone" class="ui-btn ui-btn-inline">Lista stacji pomiarowych</a></li>
+					<li><a href="#gps" class="ui-btn ui-btn-inline">Lokalizacja stacji</a></li>
+					<li><a href="#mpk" onclick="mpkFree()" class="ui-btn ui-btn-inline">Darmowa komunikacja miejska</a></li>
+					<li><a href="#powiadomieniaAndroid" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
+				</ul>
+			</div>
 			<div data-role="header" data-position="fixed">
+				<a href="#myPanelGPS" class="ui-btn ui-btn-inline">Menu</a>
 				<h1>AntySMOG</h1>
 			</div>
 			<div data-role="main" class="ui-content">
@@ -96,7 +106,17 @@
 		<!-- Strona z  wysyłaniem sms -->
 		
 		<div data-role="page" id="powiadomienia">
+			<div data-role="panel" id="myPanelPow" data-display="overlay">
+				<h2>Menu</h2>
+				<ul data-role="listview" id="sortedList">
+					<li><a href="#pageone" class="ui-btn ui-btn-inline">Lista stacji pomiarowych</a></li>
+					<li><a href="#gps" class="ui-btn ui-btn-inline">Lokalizacja stacji</a></li>
+					<li><a href="#mpk" onclick="mpkFree()" class="ui-btn ui-btn-inline">Darmowa komunikacja miejska</a></li>
+					<li><a href="#powiadomieniaAndroid" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
+				</ul>
+			</div>
 			<div data-role="header" data-position="fixed">
+				<a href="#myPanelPow" class="ui-btn ui-btn-inline">Menu</a>
 				<h1 id="stationNameHP">AntySMOG</h1>
 			</div>
 			<div data-role="main" class="ui-content">
@@ -114,22 +134,26 @@
 		<!-- Strona z informacją o drmowym mpk -->
 		
 		<div data-role="page" id="mpk">
+			<div data-role="panel" id="myPanelMPK" data-display="overlay">
+				<h2>Menu</h2>
+				<ul data-role="listview" id="sortedList">
+					<li><a href="#pageone" class="ui-btn ui-btn-inline">Lista stacji pomiarowych</a></li>
+					<li><a href="#gps" class="ui-btn ui-btn-inline">Lokalizacja stacji</a></li>
+					<li><a href="#mpk" onclick="mpkFree()" class="ui-btn ui-btn-inline">Darmowa komunikacja miejska</a></li>
+					<li><a href="#powiadomieniaAndroid" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
+				</ul>
+			</div>
 			<div data-role="header" data-position="fixed">
+				<a href="#myPanelMPK" class="ui-btn ui-btn-inline">Menu</a>
 				<h1>AntySMOG</h1>
 			</div>
 			<div data-role="main" class="ui-content">
-				<p id="q1" style="display:none">błąd</p>
-				<p id="q2" style="display:none">błąd</p>
-				<p id="q3" style="display:none">błąd</p>
-				<p id="q4" style="display:none">błąd</p>
-				<p id="q5" style="display:none">błąd</p>
-				<p id="q6" style="display:none">błąd</p>
-				<p id="q7" style="display:none">błąd</p>
-				<p id="q8" style="display:none">błąd</p>
-				<p id="data9" >błąd</p>
-				<div id="informacjaMPK"></div>
-				<p id="srednia1Jest"></p>
-				<p id="srednia2Jest"></p>
+				<a href="#" class="ui-btn ui-btn-inline">
+					<p id="data9"></p>
+					<div id="informacjaMPK"></div>
+					<p id="srednia1Jest"></p>
+					<p id="srednia2Jest"></p>
+				</a>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<a href="#powiadomienia" class="ui-btn ui-icon-comment ui-btn-icon-left">Prześlij znajomemu</a>
@@ -139,8 +163,18 @@
 		<!-- Strona z  powiadomieniami android -->
 		
 		<div data-role="page" id="powiadomieniaAndroid">
+			<div data-role="panel" id="myPanelPowAn" data-display="overlay">
+				<h2>Menu</h2>
+				<ul data-role="listview" id="sortedList">
+					<li><a href="#pageone" class="ui-btn ui-btn-inline">Lista stacji pomiarowych</a></li>
+					<li><a href="#gps" class="ui-btn ui-btn-inline">Lokalizacja stacji</a></li>
+					<li><a href="#mpk" onclick="mpkFree()" class="ui-btn ui-btn-inline">Darmowa komunikacja miejska</a></li>
+					<li><a href="#powiadomieniaAndroid" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
+				</ul>
+			</div>
 			<div data-role="header" data-position="fixed">
-				<h1 id="stationNameHP">Ustawienia Powiadomień</h1>
+				<a href="#myPanelPowAn" class="ui-btn ui-btn-inline">Menu</a>
+				<h1>Ustawienia Powiadomień</h1>
 			</div>
 			<div data-role="main" class="ui-content">
 
@@ -198,7 +232,17 @@
 
 
 		<div data-role="page" id="stationDane">
+			<div data-role="panel" id="myPanelStDa" data-display="overlay">
+				<h2>Menu</h2>
+				<ul data-role="listview" id="sortedList">
+					<li><a href="#pageone" class="ui-btn ui-btn-inline">Lista stacji pomiarowych</a></li>
+					<li><a href="#gps" class="ui-btn ui-btn-inline">Lokalizacja stacji</a></li>
+					<li><a href="#mpk" onclick="mpkFree()" class="ui-btn ui-btn-inline">Darmowa komunikacja miejska</a></li>
+					<li><a href="#powiadomieniaAndroid" data-rel="close" class="ui-btn ui-btn-inline">Powiadomienia</a></li>
+				</ul>
+			</div>
 			<div data-role="header" data-position="fixed">
+				<a href="#myPanelStDa" class="ui-btn ui-btn-inline">Menu</a>
 				<h1 id="stationNameH">AntySMOG</h1>
 			</div>
 			<div data-role="main" class="ui-content">
