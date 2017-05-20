@@ -17,8 +17,8 @@ function checkRadio() {
 	}
 }
 function checkSlider(){
-	var asd = document.getElementById('slider2').options[document.getElementById('slider2').selectedIndex].value
-	return asd;
+	var pozw = document.getElementById('slider2').options[document.getElementById('slider2').selectedIndex].value
+	return pozw;
 }
 
 function checkStation(){
@@ -35,7 +35,6 @@ function checkState(){
 }
 
 function ustawPowiadomienie(){
-	//clearInterval(timer);
 	var interwal = checkRadio();
 	var pozwolenie = checkSlider();
 	var stacja = checkStation();

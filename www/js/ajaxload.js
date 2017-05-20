@@ -531,14 +531,31 @@ function station8dane(){
 
 function mpkFree(){
 	var currentDate = new Date();
+	var wczoraj23;
 	function leadingZero(i) {
        	return (i < 10)? '0'+i : i;
     }
-	var wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()+1) + "-"  + leadingZero(currentDate.getDate() - 1) + " " +"11:00:00";
+	
+	if (currentDate.getDate() === 1) {
+    	if (currentDate.getMonth() === 4 || currentDate.getMonth() === 6 || currentDate.getMonth() === 9 || currentDate.getMonth() === 11) {
+			wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 29) + " " +"11:00:00";
+		} else if (currentDate.getMonth() === 1 || currentDate.getMonth() === 3 || currentDate.getMonth() === 5 || currentDate.getMonth() === 7 || currentDate.getMonth() === 8  || currentDate.getMonth() === 10) {
+		    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 30) + " " +"11:00:00";
+		} else if (currentDate.getMonth() === 0) {
+		    wczoraj23 = currentDate.getFullYear() - 1 + "-"+ leadingZero(currentDate.getMonth() + 12) + "-"  + leadingZero(currentDate.getDate() + 30) + " " +"11:00:00";
+		} else if (currentDate.getMonth() === 2 && currentDate.getFullYear() % 4 === 0) {
+		    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 28) + " " +"11:00:00";
+		} else if (currentDate.getMonth() === 2 && currentDate.getFullYear() % 4 !== 0) {
+		    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 27) + " " +"11:00:00";
+		}
+	} else {
+    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth() + 1) + "-"  + leadingZero(currentDate.getDate() - 1) + " " +"11:00:00";
+	}
+	
 	var wczoraj23String = wczoraj23.toString();
 	var srednia2Sum = 0;
 	var srednia1Sum = 0;
-	var idTab=['16786','16377','2750','2792','17309','16784','2770','17243'];
+	var idTab = ['16786','16377','2750','2792','17309','16784','2770','17243'];
 
 	for (var z = 0; z < 8; z++) {
 		$.getJSON( "http://api.gios.gov.pl/pjp-api/rest/data/getData/"+idTab[z], function( dane1 ) {

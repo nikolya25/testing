@@ -29,7 +29,7 @@
 		<variable name="API_KEY_FOR_ANDROID" value="AIzaSyDlnYXmwjsfy9DbCi5Kn4NfXbS6Z78S_Ko" />
 	</plugin>
 	<plugin name="cordova-plugin-splashscreen" spec="~4.0.2" />
-	<splash src="www/img/splash.jpg" density="land-hdpi"/>
-	<icon src="www/img/icon.jpg" density="ldpi" />
+	<splash src="www/img/antysmog.png" density="land-hdpi"/>
+	<icon src="www/img/smog.jpg" density="ldpi" />
 
 </widget>
