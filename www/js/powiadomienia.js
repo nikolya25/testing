@@ -89,6 +89,7 @@ function wykonajPomiar(){
 				console.log(pomiarPowiadomienie);
 			}
 		}
+		}
 	});
 }
 
