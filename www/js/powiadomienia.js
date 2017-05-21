@@ -99,13 +99,12 @@ function powiadomienia(pomiarPowiadomienieData){
 	  text: 'Stan powietrza: ' + pomiarPowiadomienieData,
 	  //sound: null,
 	  autoClear: false,
-	  //at: new Date(new Date().getTime() + 5*1000)
+	  //at: new Date(new Date().getTime() + 10*1000)
 	});
 }
 
 function powiadomieniaBrak(){
-	cordova.plugins.notification.local.schedule({
-	  id: 1,
-	  title: 'Wyłączono powiadomienia'
-	});
+	cordova.plugins.notification.local.cancel(1, function () {
+    // Notification was cancelled
+	}, scope);
 }

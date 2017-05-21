@@ -115,7 +115,7 @@ function station1dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
@@ -141,13 +141,13 @@ function station2dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station2NameH + " jest " + station2StanH + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";
-					break;
+			    	break;
 			    }
 			}
 			
@@ -156,7 +156,7 @@ function station2dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationNO2').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationNO2').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationNO2Date').innerHTML = dane1.values[x].date;
 			    	norm2NO2Now = ((dane1.values[x].value / normaNO2)*100).toFixed(2);
 			    	document.getElementById('stationNO2Norm').innerHTML = norm2NO2Now
@@ -181,13 +181,13 @@ function station3dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station3NameH + " jest " + station3StanH + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";
-					break;
+			    	break;
 			    }
 			}
 			
@@ -197,7 +197,7 @@ function station3dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationNO2').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationNO2').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationNO2Date').innerHTML = dane1.values[x].date;
 			    	norm3NO2Now = ((dane1.values[x].value / normaNO2)*100).toFixed(2);
 			    	document.getElementById('stationNO2Norm').innerHTML = norm3NO2Now;
@@ -211,7 +211,7 @@ function station3dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationCO').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationCO').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationCODate').innerHTML = dane1.values[x].date;
 			    	normCONow = ((dane1.values[x].value / normaCO)*100).toFixed(2);
 			    	document.getElementById('stationCONorm').innerHTML = normCONow;
@@ -225,7 +225,7 @@ function station3dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationBenzen').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationBenzen').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationBenzenDate').innerHTML = dane1.values[x].date;
 			    	normBenzenNow = ((dane1.values[x].value / normaBenzen)*100).toFixed(2);
 			    	document.getElementById('stationBenzenNorm').innerHTML = normBenzenNow;
@@ -239,7 +239,7 @@ function station3dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM25').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM25').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM25Date').innerHTML = dane1.values[x].date;
 			    	normPM25Now = ((dane1.values[x].value / normaPM25)*100).toFixed(2);
 			    	document.getElementById('stationPM25Norm').innerHTML = normPM25Now;
@@ -268,13 +268,13 @@ function station4dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station4NameH + " jest " + station4StanH + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";	
-					break;
+			    	break;
 			    }
 			}
 			
@@ -284,7 +284,7 @@ function station4dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationNO2').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationNO2').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationNO2Date').innerHTML = dane1.values[x].date;
 			    	norm3NO2Now = ((dane1.values[x].value / normaNO2)*100).toFixed(2);
 			    	document.getElementById('stationNO2Norm').innerHTML = norm3NO2Now;
@@ -298,7 +298,7 @@ function station4dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationCO').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationCO').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationCODate').innerHTML = dane1.values[x].date;
 			    	normCONow = ((dane1.values[x].value / normaCO)*100).toFixed(2);
 			    	document.getElementById('stationCONorm').innerHTML = normCONow;
@@ -312,7 +312,7 @@ function station4dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationBenzen').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationBenzen').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationBenzenDate').innerHTML = dane1.values[x].date;
 			    	normBenzenNow = ((dane1.values[x].value / normaBenzen)*100).toFixed(2);
 			    	document.getElementById('stationBenzenNorm').innerHTML = normBenzenNow;
@@ -326,7 +326,7 @@ function station4dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM25').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM25').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM25Date').innerHTML = dane1.values[x].date;
 			    	normPM25Now = ((dane1.values[x].value / normaPM25)*100).toFixed(2);
 			    	document.getElementById('stationPM25Norm').innerHTML = normPM25Now;
@@ -340,7 +340,7 @@ function station4dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationSO2').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationSO2').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationSO2Date').innerHTML = dane1.values[x].date;
 			    	normSO2Now = ((dane1.values[x].value / normaSO2)*100).toFixed(2);
 			    	document.getElementById('stationSO2Norm').innerHTML = normSO2Now;
@@ -369,13 +369,13 @@ function station5dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station5NameH + " jest " + station5StanH + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";
-					break;
+			    	break;
 			    }
 			}
 			
@@ -396,13 +396,13 @@ function station6dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station6NameH + " jest " + station6StanH + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";	
-					break;
+			    	break;
 			    }
 			}
 			
@@ -423,13 +423,13 @@ function station7dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station7NameH + " jest " + station7StanH + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";	
-					break;
+			    	break;
 			    }
 			}
 			
@@ -439,7 +439,7 @@ function station7dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationNO2').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationNO2').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationNO2Date').innerHTML = dane1.values[x].date;
 			    	norm3NO2Now = ((dane1.values[x].value / normaNO2)*100).toFixed(2);
 			    	document.getElementById('stationNO2Norm').innerHTML = norm3NO2Now;
@@ -453,7 +453,7 @@ function station7dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationO3').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationO3').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationO3Date').innerHTML = dane1.values[x].date;
 			    	normO3Now = ((dane1.values[x].value / normaO3)*100).toFixed(2);
 			    	document.getElementById('stationO3Norm').innerHTML = normO3Now;
@@ -467,7 +467,7 @@ function station7dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM25').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM25').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM25Date').innerHTML = dane1.values[x].date;
 			    	normPM25Now = ((dane1.values[x].value / normaPM25)*100).toFixed(2);
 			    	document.getElementById('stationPM25Norm').innerHTML = normPM25Now;
@@ -481,7 +481,7 @@ function station7dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationSO2').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationSO2').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationSO2Date').innerHTML = dane1.values[x].date;
 			    	normSO2Now = ((dane1.values[x].value / normaSO2)*100).toFixed(2);
 			    	document.getElementById('stationSO2Norm').innerHTML = normSO2Now;
@@ -509,13 +509,13 @@ function station8dane(){
 			for (var x = 0; x < 24; x++) {
 			
 			    if (dane1.values[x].value != null) {
-			    	document.getElementById('stationPM10').innerHTML = dane1.values[x].value;
+			    	document.getElementById('stationPM10').innerHTML = (dane1.values[x].value).toFixed(2);
 			    	document.getElementById('stationPM10Date').innerHTML = dane1.values[x].date;
 			    	normPM10Now = ((dane1.values[x].value / normaPM10)*100).toFixed(2);
 			    	document.getElementById('stationPM10Norm').innerHTML = normPM10Now;
 			    	localStorage.setItem("normPM10Now", normPM10Now);
 					document.getElementById('messageTxt').value = "Stan powietrza na stacji " + station8NameH + " jest " + station8StanH  + ". Stężenie pyłu PM10 wynosi " + localStorage.getItem("normPM10Now") + "%";	
-					break;
+			    	break;
 			    }
 			}
 			
@@ -533,25 +533,23 @@ function mpkFree(){
 	var currentDate = new Date();
 	var wczoraj23;
 	function leadingZero(i) {
-       	return (i < 10)? '0'+i : i;
+       	return (i < 10)? '0' + i : i;
     }
-	
 	if (currentDate.getDate() === 1) {
     	if (currentDate.getMonth() === 4 || currentDate.getMonth() === 6 || currentDate.getMonth() === 9 || currentDate.getMonth() === 11) {
-			wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 29) + " " +"11:00:00";
+			wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 29) + " " + "11:00:00";
 		} else if (currentDate.getMonth() === 1 || currentDate.getMonth() === 3 || currentDate.getMonth() === 5 || currentDate.getMonth() === 7 || currentDate.getMonth() === 8  || currentDate.getMonth() === 10) {
-		    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 30) + " " +"11:00:00";
+		    wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 30) + " " + "11:00:00";
 		} else if (currentDate.getMonth() === 0) {
-		    wczoraj23 = currentDate.getFullYear() - 1 + "-"+ leadingZero(currentDate.getMonth() + 12) + "-"  + leadingZero(currentDate.getDate() + 30) + " " +"11:00:00";
+		    wczoraj23 = currentDate.getFullYear() - 1 + "-" + leadingZero(currentDate.getMonth() + 12) + "-"  + leadingZero(currentDate.getDate() + 30) + " " + "11:00:00";
 		} else if (currentDate.getMonth() === 2 && currentDate.getFullYear() % 4 === 0) {
-		    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 28) + " " +"11:00:00";
+		    wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 28) + " " + "11:00:00";
 		} else if (currentDate.getMonth() === 2 && currentDate.getFullYear() % 4 !== 0) {
-		    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 27) + " " +"11:00:00";
+		    wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth()) + "-"  + leadingZero(currentDate.getDate() + 27) + " " + "11:00:00";
 		}
 	} else {
-    wczoraj23 = currentDate.getFullYear() + "-"+ leadingZero(currentDate.getMonth() + 1) + "-"  + leadingZero(currentDate.getDate() - 1) + " " +"11:00:00";
+		wczoraj23 = currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth() + 1) + "-"  + leadingZero(currentDate.getDate() - 1) + " " + "11:00:00";
 	}
-	
 	var wczoraj23String = wczoraj23.toString();
 	var srednia2Sum = 0;
 	var srednia1Sum = 0;
@@ -589,8 +587,7 @@ function mpkFree(){
 		} else {
 			document.getElementById('wsms').innerHTML = "Brak podstaw do ogłoszenia darmowej komunikacji miejskiej";
 		}
-		document.getElementById('data9').innerHTML = "W dniu dzisiejszym tzn. " + currentDate.getFullYear() + "-" + leadingZero(currentDate.getMonth() + 1) + "-"  + leadingZero(currentDate.getDate()) + " MPK S.A. w Krakowie informuje:";
-		document.getElementById('srednieSa').innerHTML = "Podstawą tego są dane pomiarowe jakości powietrza otrzymane: " + wczoraj23 + ", kiedy, średnie pomiarów na wszystkich stacjach wynosiły " + srednia1Final + " i " + srednia2Final;
+		document.getElementById('srednieSa').innerHTML = "Na podstawie danych pomiarowych z dnia wczorajszego";
 		document.getElementById('messageTxt').value = document.getElementById('wsms').innerHTML;
 	}
 }
